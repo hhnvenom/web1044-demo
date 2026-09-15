@@ -1,27 +1,26 @@
-// BÀI 1.3 — Tìm và sửa lỗi ép kiểu
-// Yêu cầu:
-//   1. Chạy đoạn code, ghi lại kết quả THỰC TẾ của từng dòng vào comment
-//   2. Xác định dòng nào cho kết quả không như mong đợi
-//   3. Giải thích nguyên nhân
-//   4. Đề xuất cách viết đúng để tránh lỗi logic (viết code chạy được ở cuối file)
-// Mẫu trả lời cho mỗi dòng:  // Kết quả: ... | Nguyên nhân: ... | Cách sửa: ...
+// BÀI 1.3 — Tìm và sửa lỗi ép kiểu (ĐÁP ÁN)
 
 console.log("10" + 5)
-// Kết quả:
+// Kết quả: "105" (chuỗi) | Nguyên nhân: + gặp chuỗi nên NỐI thay vì cộng | Cách sửa: Number("10") + 5
+//   ← ĐÂY LÀ DÒNG BẤT THƯỜNG DUY NHẤT — người viết muốn cộng số nhưng nhận được chuỗi.
 
 console.log("10" - 5)
-// Kết quả:
+// Kết quả: 5 (số) | Nguyên nhân: - chỉ có nghĩa với số nên JS đổi "10" thành 10 | Đúng ý định.
 
 console.log(Number("20"))
-// Kết quả:
+// Kết quả: 20 (số) | Ép kiểu tường minh, đúng ý định.
 
 console.log(String(123))
-// Kết quả:
+// Kết quả: "123" (chuỗi) | Ép kiểu tường minh, đúng ý định.
 
 console.log(Boolean(""))
-// Kết quả:
+// Kết quả: false | Chuỗi rỗng là một trong 6 giá trị falsy | Đúng ý định (nhưng dễ gây khó hiểu).
 
 console.log(+"123")
-// Kết quả:
+// Kết quả: 123 (số) | Dấu + đứng trước một toán hạng = Number() | Đúng ý định.
 
-// TODO: dán code đã sửa của bạn vào đây và chạy thử
+// Code đã sửa cho dòng 1: ép kiểu TRƯỚC khi tính
+const a = "10"
+const b = 5
+console.log(Number(a) + b)   // 15
+console.log(+a + b)          // 15 — cách viết ngắn

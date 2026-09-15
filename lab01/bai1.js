@@ -1,14 +1,17 @@
-// BÀI 1.1 — In thông tin cá nhân ra console
-// Yêu cầu:
-//   1. Khai báo các biến: mã SV, họ tên, ngày sinh, nơi sinh, chuyên ngành
-//   2. In tất cả ra console
-// Tiêu chí: chạy được bằng node; tên biến có nghĩa, camelCase; chọn đúng let/const.
-//
-// Kết quả mong đợi (thay bằng thông tin của bạn):
-//   PS12345
-//   Nguyen Van A
-//   01/01/2007
-//   Hanoi
-//   Information Technology
+// BÀI 1.1 — In thông tin cá nhân ra console (ĐÁP ÁN)
+// Cả 5 biến là thông tin cố định trong chương trình => dùng const.
 
-// TODO: viết code của bạn dưới đây
+const studentID = 'PS12345'
+const fullName = 'Nguyen Van A'
+const dateOfBirth = '01/01/2007'
+const placeOfBirth = 'Hanoi'
+const major = 'Information Technology'
+
+console.log(studentID)
+console.log(fullName)
+console.log(dateOfBirth)
+console.log(placeOfBirth)
+console.log(major)
+
+// Nâng cao: in kèm nhãn bằng template string
+console.log(`MSSV: ${studentID} — ${fullName}`)

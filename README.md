@@ -1,13 +1,11 @@
-# l1/lab-start — Code khởi tạo Lab 01
+# l1/lab-solution — Đáp án Lab 01 (dành cho giảng viên)
 
-**Slide:** Bài 1 · LAB 01 (demo `l1-lab-start`, cũng dùng ở bài 0 để hướng dẫn clone repo).
-
-Khung thư mục và đề bài cho 4 bài của Lab 01. Sinh viên làm trực tiếp vào `lab01/bai1.js` … `bai4.js`.
+Nối tiếp `l1/lab-start`. Không phát cho sinh viên trước hạn nộp.
 
 ```bash
-git fetch origin && git checkout l1/lab-start
-node index.js          # chạy cả 4 bài
-node lab01/bai1.js     # chạy riêng một bài
+node index.js
+git diff l1/lab-start l1/lab-solution   # xem phần đáp án đã điền
 ```
 
-Nộp bài: nén cả thư mục `lab01/` và nộp lên LMS trước hạn.
+Điểm chấm quan trọng: bài 1.2 phải có **đề xuất khai báo tốt hơn**; bài 1.3 phải chỉ đúng
+dòng bất thường duy nhất (`"10" + 5`) và giải thích cơ chế ép kiểu.
