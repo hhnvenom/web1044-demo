@@ -1,17 +1,17 @@
-# l8/d4-cart-persist — Giỏ hàng sống sót qua F5
+# l8/d5-notification — Notification khi thanh toán
 
-**Slide:** Bài 8 · "Giỏ hàng sống sót qua F5" (demo `l8-d4`).
+**Slide:** Bài 8 · "Notification API" (demo `l8-d5`).
 
-Ba chỗ cần sửa so với bài 7: đọc lại lúc khởi động, hàm `luuGio()`,
-và gọi `luuGio()` ngay đầu `renderCart()`.
+Ba trạng thái quyền: `default` chưa hỏi · `granted` đã cho phép · `denied` đã từ chối.
+Từ chối rồi thì **không hỏi lại được**, nên nhánh `else` hiện thông báo ngay trong trang.
 
-Vì bài 7 đã quy định **mọi thay đổi đều gọi `renderCart()`** nên đặt ở đó là không sót chỗ nào —
-kể cả khi xoá hết giỏ (tiêu chí thứ ba của LAB 8.2).
+Chỉ xin quyền **khi người dùng bấm nút**, đừng xin lúc tải trang.
+Thanh toán xong thì giỏ rỗng, cả trong `localStorage`.
 
 ```bash
 npx serve .
 # rồi mở http://localhost:3000
-git diff l8/d3-dark-mode l8/d4-cart-persist
+git diff l8/d4-cart-persist l8/d5-notification
 ```
 
-Branch tiếp theo: `l8/d5-notification`.
+Branch tiếp theo: `l8/d6-validator`.

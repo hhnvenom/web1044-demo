@@ -1,6 +1,6 @@
 // ==========================================================
-//  Bài 8 · Demo 4 — Giỏ hàng sống sót qua F5
-//  Slide: "Giỏ hàng sống sót qua F5"
+//  Bài 8 · Demo 5 — Notification khi thanh toán
+//  Slide: "Notification API"
 //  Chạy: npx serve .   rồi mở http://localhost:3000
 // ==========================================================
 
@@ -141,6 +141,32 @@ function themVaoGio(id) {
   else cart.push({ id: id, qty: 1 })
   renderCart()
 }
+
+// ---------- Demo 5 — Notification khi thanh toán ----------
+document.getElementById('checkoutBtn').addEventListener('click', async () => {
+  const thongBao = document.getElementById('thongBao')
+
+  if (cart.length === 0) {
+    thongBao.textContent = 'Giỏ hàng đang trống'
+    return
+  }
+
+  if (!('Notification' in window)) {
+    thongBao.textContent = 'Trình duyệt không hỗ trợ'
+  } else {
+    const quyen = await Notification.requestPermission()
+    if (quyen === 'granted') {
+      new Notification('Chúc mừng bạn đã mua hàng thành công')
+      thongBao.textContent = ''
+    } else {
+      thongBao.textContent = 'Bạn đã từ chối — hiện thông báo trong trang thay thế'
+    }
+  }
+
+  // Thanh toán xong thì giỏ phải rỗng, cả trong localStorage
+  cart = []
+  renderCart()
+})
 
 renderProducts()
 renderCart()
