@@ -1,13 +1,13 @@
-# l5/d4-class-student — class Student
+# l5/d5-private-field — Private field
 
-**Slide:** Bài 5 · demo `l5-d4`.
+**Slide:** Bài 5 · demo `l5-d5`.
 
-Mỗi instance giữ bộ thuộc tính riêng nên sửa `a` không đụng tới `b`.
-Bản đầy đủ giải lại đúng bài toán mở đầu buổi: xoá một sinh viên là xoá cả object, hai người còn lại không lệch dữ liệu.
+Không có `#`, ai cũng gán được `tk.soDu = -999999`. Có `#`, muốn đổi số dư phải đi qua `napTien` — nơi có kiểm tra.
+Trong file có sẵn một dòng đã comment để bạn bỏ comment và thấy lỗi cú pháp thật.
 
 ```bash
 node index.js
-git diff l5/d3-class-constructor l5/d4-class-student
+git diff l5/d4-class-student l5/d5-private-field
 ```
 
-Branch tiếp theo: `l5/d5-private-field`.
+Branch tiếp theo: `l5/d6-getter-setter`.

@@ -159,3 +159,30 @@
   ds[0].capNhatDiem(9.5)
   console.log(ds[0].info())
 }
+
+// ------------------------------------------------------
+//  Demo 5 — Private field  (slide "Private field — dấu #")
+// ------------------------------------------------------
+{
+  class TaiKhoan {
+    #soDu = 0
+
+    napTien(soTien) {
+      if (soTien <= 0) return 'Số tiền không hợp lệ'
+      this.#soDu += soTien
+      return this.#soDu
+    }
+
+    xemSoDu() { return this.#soDu }
+  }
+
+  const tk = new TaiKhoan()
+  console.log(tk.napTien(500000))
+  console.log(tk.xemSoDu())
+
+  console.log(tk.napTien(-100))   // 'Số tiền không hợp lệ' — bị chặn
+  console.log(tk.soDu)            // undefined, KHÔNG phải 500000
+
+  // Bỏ comment dòng dưới để thấy lỗi cú pháp thật:
+  // console.log(tk.#soDu)
+}
