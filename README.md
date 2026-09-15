@@ -1,15 +1,18 @@
-# l6/d3-tao-phan-tu — Tạo phần tử mới
+# l6/d4-render-san-pham — Render mảng ra giao diện
 
-**Slide:** Bài 6 · "Tạo phần tử mới" (demo `l6-d3`).
+**Slide:** Bài 6 · "Render mảng ra giao diện" (demo `l6-d4`).
 
-Bốn bước: `createElement` → đổ nội dung → gắn class → **`appendChild`**.
+Đây là slide quan trọng nhất bài: dữ liệu bài 4 lần đầu xuất hiện trên màn hình.
 
 ```bash
 npx serve .
-git diff l6/d2-chon-phan-tu l6/d3-tao-phan-tu
+git diff l6/d3-tao-phan-tu l6/d4-render-san-pham
 ```
 
-Thử xoá dòng `appendChild` rồi tải lại: code chạy không lỗi mà màn hình không có gì mới.
-90% trường hợp "chạy không lỗi mà trống trơn" là do quên bước này.
+`js/data.js` giữ mảng `products`, `js/app.js` lo phần render. Thêm một sản phẩm vào mảng
+rồi tải lại trang — thẻ mới tự hiện, không phải sửa HTML.
 
-Branch tiếp theo: `l6/d4-render-san-pham`.
+Ảnh sản phẩm để dạng **SVG** trong `img/` cho nhẹ và chạy offline.
+Assignment của bạn thay bằng ảnh thật.
+
+Branch tiếp theo: `l6/d5-countdown`.

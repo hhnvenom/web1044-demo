@@ -72,3 +72,20 @@ document.body.appendChild(div)
 
 // Ba dòng đầu chỉ tạo object TRONG BỘ NHỚ.
 // Không có appendChild thì không ai nhìn thấy gì — đây là lỗi hay gặp nhất của bài.
+
+// ======================================================
+//  Demo 4 — Render mảng products ra giao diện
+//  (products nằm ở js/data.js, nạp trước file này)
+// ======================================================
+const ds = document.getElementById('ds')
+
+ds.innerHTML = products.map(p => `
+  <div class="product">
+    <h3>${p.name}</h3>
+    <p>${p.price.toLocaleString('vi-VN')}đ</p>
+  </div>
+`).join('')
+
+// map của bài 4 + template string + join('') = ba dòng render cả mảng.
+// Thiếu join('') thì mảng tự nối bằng dấu phẩy, giao diện lòi ra dấu ",".
+// toLocaleString('vi-VN') đổi 120000 thành 120.000.

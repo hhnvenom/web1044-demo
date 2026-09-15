@@ -3,39 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bài 6 · Demo 3 — Tạo phần tử mới</title>
+  <title>Bài 6 · Demo 4 — Render mảng sản phẩm</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <h1 id="tieu-de">Danh sách sản phẩm</h1>
-  <p class="gia">120.000đ</p>
-  <p class="gia">90.000đ</p>
+  <p class="muted">Ba thẻ dưới đây sinh ra từ mảng <code>products</code>, không viết tay HTML.</p>
+
+  <div id="ds"></div>
 
   <div class="box">
-    <button onclick="openStudentInfo()">Mở thông tin sinh viên</button>
-  </div>
-
-  <div class="box">
-    <h2 style="margin-top:0">textContent hay innerHTML</h2>
+    <h2 style="margin-top:0">Các phần đã học ở demo trước</h2>
+    <p class="gia">120.000đ</p>
+    <p class="gia">90.000đ</p>
     <p class="muted">textContent:</p>
     <div id="a" class="o-thu"></div>
     <p class="muted">innerHTML:</p>
     <div id="b" class="o-thu"></div>
-  </div>
-
-  <div class="box">
-    <h2 style="margin-top:0">style và classList</h2>
     <p id="p1">Cà phê Arabica</p>
     <p id="p2">Cà phê Robusta</p>
-  </div>
-
-  <div class="box">
-    <h2 style="margin-top:0">Các đối tượng BOM</h2>
     <div id="thong-tin" class="muted"></div>
+    <button onclick="openStudentInfo()">Mở thông tin sinh viên</button>
   </div>
 
-  <h2>Phần tử được tạo bằng JavaScript</h2>
-
+  <script src="js/data.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
