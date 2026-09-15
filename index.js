@@ -247,3 +247,43 @@
 
   // Hai dòng cuối ra undefined chứ KHÔNG báo lỗi — lại là lỗi im lặng.
 }
+
+// ------------------------------------------------------
+//  Demo 8 — Composition: object chứa object  (slide "Composition")
+// ------------------------------------------------------
+{
+  class Product {
+    constructor(name, price) {
+      this.name = name
+      this.price = price
+    }
+  }
+
+  class Cart {
+    #items = []
+
+    addProduct(product, qty) {
+      this.#items.push({ product, qty })
+    }
+
+    getTotal() {
+      return this.#items.reduce(
+        (tong, i) => tong + i.product.price * i.qty, 0
+      )
+    }
+
+    getCartInfo() {
+      return this.#items.map(i => i.product.name + ' x' + i.qty)
+    }
+  }
+
+  const cart = new Cart()
+  cart.addProduct(new Product('Arabica', 120000), 2)
+  console.log(cart.getTotal())
+
+  cart.addProduct(new Product('Robusta', 90000), 1)
+  console.log(cart.getCartInfo())
+  console.log(cart.getTotal())
+
+  // getTotal dùng reduce của bài 4 — OOP gom những thứ đã học vào một chỗ có tên.
+}

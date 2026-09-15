@@ -1,12 +1,13 @@
-# l5/d7-static — static
+# l5/d8-composition — Composition
 
-**Slide:** Bài 5 · demo `l5-d7`.
+**Slide:** Bài 5 · demo `l5-d8`.
 
-`static` gọi trực tiếp qua tên class. Gọi qua instance ra `undefined` chứ **không báo lỗi** — lại là một lỗi im lặng.
+`Cart` chứa nhiều `Product`. `getTotal` dùng `reduce` của bài 4 — OOP không thay thế những gì đã học, nó gom chúng lại thành một chỗ có tên.
+Đây chính là LAB 5.3.
 
 ```bash
 node index.js
-git diff l5/d6-getter-setter l5/d7-static
+git diff l5/d7-static l5/d8-composition
 ```
 
-Branch tiếp theo: `l5/d8-composition`.
+Branch tiếp theo: `l5/end`.
