@@ -1,18 +1,19 @@
-# l7/d1-add-event-listener — addEventListener
+# l7/d2-event-delegation — Event delegation
 
-**Slide:** Bài 7 · "addEventListener" (demo `l7-d1`).
+**Slide:** Bài 7 · "Event delegation" (demo `l7-d2`).
 
-Trang sản phẩm của bài 6 giờ **biết lắng nghe**. Nút đếm số lần bấm.
+Gắn **một** listener ở thẻ cha thay vì gắn cho từng nút con.
 
-Ba thành phần của một listener: phần tử nào lắng nghe · sự kiện gì · làm gì khi xảy ra.
+Dòng `if (!e.target.classList.contains('mua')) return` là bắt buộc — không có nó thì
+bấm vào khoảng trống cũng chạy.
 
-Lỗi số một của bài: viết `addEventListener('click', xuLy())` có dấu ngoặc — hàm chạy ngay
-lúc tải trang thay vì lúc bấm.
+Gắn listener cho từng nút sẽ **hỏng** khi render lại danh sách bằng `innerHTML`:
+nút cũ bị xoá, listener biến mất theo. Delegation không bị vậy.
 
 ```bash
 npx serve .
 # rồi mở http://localhost:3000
-git diff l6/end l7/d1-add-event-listener
+git diff l7/d1-add-event-listener l7/d2-event-delegation
 ```
 
-Branch tiếp theo: `l7/d2-event-delegation`.
+Branch tiếp theo: `l7/d3-hieu-ung-an-hien`.

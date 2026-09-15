@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cà phê — Bài 7 · Demo 1</title>
+  <title>Cà phê — Bài 7 · Demo 2</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,6 +15,17 @@
       <h2>Demo 1 — addEventListener</h2>
       <button id="btn">Thêm giỏ hàng</button>
       <p id="out"></p>
+    </section>
+
+    <!-- Demo 2: một listener cho cả danh sách -->
+    <section class="demo">
+      <h2>Demo 2 — event delegation</h2>
+      <div id="ds">
+        <button class="mua-nho" data-ten="Arabica">Mua</button>
+        <button class="mua-nho" data-ten="Robusta">Mua</button>
+        <button class="mua-nho" data-ten="Cà phê xanh">Mua</button>
+      </div>
+      <p id="out-ds"></p>
     </section>
 
     <h2>Sản phẩm</h2>

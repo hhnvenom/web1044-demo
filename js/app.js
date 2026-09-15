@@ -30,3 +30,26 @@ btn.addEventListener('click', function () {
 // Ba thành phần: PHẦN TỬ NÀO lắng nghe · SỰ KIỆN GÌ · LÀM GÌ khi xảy ra.
 // Chú ý: addEventListener('click', xuLy) — KHÔNG có dấu ngoặc sau tên hàm.
 // Viết xuLy() là gọi ngay lập tức rồi truyền kết quả vào, sai hoàn toàn.
+
+// ======================================================
+//  Demo 2 — Event delegation: MỘT listener cho cả danh sách
+// ======================================================
+
+// Một listener duy nhất ở thẻ cha
+document.getElementById('ds').addEventListener('click', function (e) {
+  if (!e.target.classList.contains('mua-nho')) return
+  document.getElementById('out-ds').textContent = 'Đã thêm: ' + e.target.dataset.ten
+})
+
+// Dòng kiểm tra class ở trên là BẮT BUỘC — không có nó thì bấm vào
+// khoảng trống giữa các nút cũng chạy.
+//
+// Vì sao không gắn listener cho từng nút?
+// Vì render lại danh sách bằng innerHTML sẽ xoá nút cũ kèm listener của nó.
+// Delegation gắn ở thẻ cha nên không bị mất.
+
+// Áp dụng ngay cho danh sách sản phẩm thật
+document.getElementById('danh-sach').addEventListener('click', function (e) {
+  if (!e.target.classList.contains('mua')) return
+  out.textContent = 'Đã thêm: ' + e.target.dataset.ten
+})
