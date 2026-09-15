@@ -63,3 +63,26 @@ console.log('Tổng:', tongTien)
 
 // Cả ba đều KHÔNG sửa mảng gốc
 console.log('mảng gốc vẫn còn', products.length, 'phần tử')
+
+// ======================================================
+//  Demo 4 — sort và cái bẫy sắp xếp theo chuỗi
+// ======================================================
+const so = [10, 9, 100, 25]
+
+console.log([...so].sort())                 // [10, 100, 25, 9] — SAI
+console.log([...so].sort((a, b) => a - b))  // [9, 10, 25, 100] — đúng
+
+// sort() mặc định đổi mọi phần tử thành CHUỖI rồi so sánh từng ký tự,
+// nên "100" đứng trước "25" vì ký tự '1' < '2'.
+// Với số LUÔN truyền comparator (a, b) => a - b.
+
+const sanPham = [
+  { name: 'Laptop', price: 1200 },
+  { name: 'Mouse', price: 30 },
+  { name: 'Keyboard', price: 75 },
+  { name: 'Monitor', price: 300 }
+]
+const theoGia = [...sanPham].sort((a, b) => a.price - b.price)
+console.log(theoGia.map(p => p.name))   // Mouse, Keyboard, Monitor, Laptop
+
+// Lưu ý: sort() sửa NGAY mảng gốc. Dùng [...mang] để giữ bản gốc.
