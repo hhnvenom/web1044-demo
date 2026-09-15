@@ -57,3 +57,8 @@ button:hover { border-color: #f37021; }
   background: #fff;
 }
 .demo h2 { margin: 0 0 12px; font-size: 16px; color: #6b7386; }
+
+/* Demo 3 — JS chỉ bật/tắt class, hiệu ứng mượt là việc của CSS transition */
+#box { opacity: 0; transition: opacity .5s; background: #cfc; padding: 16px }
+#box.hien { opacity: 1 }
+.ghi-chu { color: #6b7386; font-size: 13px; }

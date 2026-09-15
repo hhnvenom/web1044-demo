@@ -53,3 +53,22 @@ document.getElementById('danh-sach').addEventListener('click', function (e) {
   if (!e.target.classList.contains('mua')) return
   out.textContent = 'Đã thêm: ' + e.target.dataset.ten
 })
+
+// ======================================================
+//  Demo 3 — Hiệu ứng ẩn hiện bằng class
+// ======================================================
+const box = document.getElementById('box')
+
+document.getElementById('btn-box').addEventListener('click', function () {
+  box.classList.toggle('hien')
+})
+
+// JavaScript chỉ bật/tắt class. Hiệu ứng mượt là việc của CSS transition.
+// Đừng dùng JS để đổi opacity từng bước.
+
+// ---- Hiệu ứng TỰ CHẠY, không cần bấm nút (LAB 7.1) ----
+setTimeout(function () { box.classList.add('hien') }, 2000)     // hiện sau 2 giây
+setTimeout(function () { box.classList.remove('hien') }, 5000)  // ẩn sau 5 giây
+
+// Hai mốc ĐỘC LẬP: cả hai tính từ lúc trang tải xong, không nối tiếp nhau.
+// Hiện ở giây thứ 2, ẩn ở giây thứ 5 — tồn tại 3 giây.
