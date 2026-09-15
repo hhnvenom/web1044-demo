@@ -1,14 +1,18 @@
-# l3/d2-tach-ham — Tách code lặp thành hàm
+# l3/d3-cac-cach-khai-bao — Ba cách khai báo hàm
 
-**Slide:** Bài 3 · "Refactor thành hàm" (demo `l3-d2`).
+**Slide:** Bài 3 · "Ba cách khai báo hàm" (demo `l3-d3`).
 
-Đoạn tính tiền điện của bài 2 được bọc thành hàm `tinhTienDien(soKwh)` và gọi lại ba lần.
+Declaration, expression và arrow function viết cùng một phép tính.
 
 ```bash
 node index.js
-git diff l2/end l3/d2-tach-ham     # xem đoạn code lặp biến thành hàm
+git diff l3/d2-tach-ham l3/d3-cac-cach-khai-bao
 ```
 
-Thử: đổi giá bậc 3 từ `3000` thành `3200` — chỉ sửa **một dòng** bên trong hàm.
+| Cách viết | Gọi trước khi khai báo | Dùng khi nào |
+|---|---|---|
+| Declaration | Được | Hàm chính của file |
+| Expression | Không | Ít dùng ở môn này |
+| Arrow | Không | Callback, học kỹ ở bài 4 |
 
-Branch tiếp theo: `l3/d3-cac-cach-khai-bao`.
+Branch tiếp theo: `l3/d8-ham-goi-ham`.

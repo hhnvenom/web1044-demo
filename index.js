@@ -25,3 +25,25 @@ function tinhTienDien(soKwh) {
 console.log(tinhTienDien(30))    // 54000
 console.log(tinhTienDien(80))    // 159000
 console.log(tinhTienDien(335))   // 910000
+
+// ======================================================
+//  Demo 2 — Ba cách khai báo hàm
+// ======================================================
+
+// 1. Function declaration — gọi được cả trước khi khai báo
+function cong(a, b) {
+  return a + b
+}
+
+// 2. Function expression — phải khai báo trước khi gọi
+const tru = function (a, b) {
+  return a - b
+}
+
+// 3. Arrow function — phải khai báo trước khi gọi
+const nhan = (a, b) => a * b
+
+console.log(cong(5, 3), tru(5, 3), nhan(5, 3))   // 8 2 15
+
+// Ở môn này dùng declaration là chính.
+// Arrow sẽ gặp lại nhiều ở bài 4 khi dùng map/filter.
