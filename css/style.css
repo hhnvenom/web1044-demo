@@ -1,0 +1,35 @@
+/* WEB1044 · Bài 6 — BOM và DOM */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+  background: #fffdfb;
+  color: #1b2437;
+  line-height: 1.6;
+}
+
+h1 { font-size: 1.6rem; margin: 0 0 4px; }
+h2 { font-size: 1.15rem; margin: 24px 0 8px; }
+.muted { color: #6b7386; font-size: 0.9rem; }
+
+button {
+  font: inherit;
+  font-weight: 600;
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: #f37021;
+  color: #fff;
+  cursor: pointer;
+}
+button:hover { background: #e05a0c; }
+
+.box {
+  border: 1.5px solid #e6e8ee;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-top: 12px;
+  background: #fff;
+}

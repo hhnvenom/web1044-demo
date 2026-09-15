@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 6 · Demo 1 — window.open</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>BOM — điều khiển cửa sổ trình duyệt</h1>
+  <p class="muted">Bấm nút để mở một cửa sổ mới, kích thước 600 × 400 và nằm chính giữa màn hình.</p>
+
+  <div class="box">
+    <button onclick="openStudentInfo()">Mở thông tin sinh viên</button>
+    <p class="muted" style="margin-bottom:0">
+      Trình duyệt chặn popup thì sẽ không thấy gì — hãy cho phép popup cho trang này.
+    </p>
+  </div>
+
+  <div class="box">
+    <h2 style="margin-top:0">Các đối tượng BOM khác</h2>
+    <div id="thong-tin" class="muted"></div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
