@@ -1,14 +1,14 @@
-# l1/d2-ep-kieu — Ép kiểu ngầm định
+# l1/d3-ep-kieu-tuong-minh — Ép kiểu tường minh
 
-**Slide:** Bài 1 · "So sánh `"10" + 5` vs `"10" - 5`" (demo `l1-d7`).
+**Slide:** Bài 1 · "Ép kiểu tường minh: `Number()`, `String()`, `Boolean()`" (demo `l1-d8`).
 
-Nối tiếp `l1/d1-hello-console`: thêm các trường hợp JavaScript tự đổi kiểu với `+`, `-`, `*`, `==`.
+Nối tiếp `l1/d2-ep-kieu`: cách chủ động đổi kiểu và cách nhận biết `NaN`.
 
 ```bash
 node index.js
-git diff l1/d1-hello-console l1/d2-ep-kieu   # chỉ xem phần vừa thêm
+git diff l1/d2-ep-kieu l1/d3-ep-kieu-tuong-minh
 ```
 
-Điểm cần nhớ: `+` gặp chuỗi thì **nối**; `-` `*` `/` đổi mọi thứ thành **số** rồi tính.
+Quy tắc: dữ liệu vào từ người dùng luôn là chuỗi — ép bằng `Number()` **trước khi** tính.
 
-Branch tiếp theo: `l1/d3-ep-kieu-tuong-minh`.
+Branch tiếp theo: `l1/end`.

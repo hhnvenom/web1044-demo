@@ -23,3 +23,18 @@ console.log('--- các trường hợp lạ ---')
 console.log(true + 1)        // 2      — true thành 1
 console.log([] + {})         // "[object Object]"
 console.log(5 == "5")        // true   — == đổi kiểu trước khi so sánh
+
+// ---------- Demo 3 — Ép kiểu tường minh (explicit coercion) ----------
+// Tự mình đổi kiểu để không phụ thuộc vào "đoán" của JavaScript.
+
+console.log('--- Number / String / Boolean ---')
+console.log(Number("20"))     // 20
+console.log(String(123))      // "123"
+console.log(Boolean(""))      // false — chuỗi rỗng là falsy
+
+console.log('--- dấu + đứng trước cũng đổi thành số ---')
+console.log(+"123")           // 123
+
+console.log('--- không đổi được thì ra NaN ---')
+console.log(Number("abc"))    // NaN
+console.log(Number("10") + 5) // 15 — cách sửa cho bug "10" + 5
