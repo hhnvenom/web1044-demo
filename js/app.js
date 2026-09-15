@@ -1,6 +1,6 @@
 // ==========================================================
-//  Bài 8 · Demo 3 — Dark / Light mode nhớ lựa chọn
-//  Slide: "Dark mode nhớ lựa chọn"
+//  Bài 8 · Demo 4 — Giỏ hàng sống sót qua F5
+//  Slide: "Giỏ hàng sống sót qua F5"
 //  Chạy: npx serve .   rồi mở http://localhost:3000
 // ==========================================================
 
@@ -40,8 +40,29 @@ document.getElementById('xoaTen').addEventListener('click', () => {
 
 hienThi()   // đọc lại ngay khi tải trang
 
-// ---------- Giỏ hàng từ bài 7 (chưa lưu được) ----------
-let cart = []
+// ---------- Demo 4 — Giỏ hàng sống sót qua F5 ----------
+// 1. Đọc lại khi tải trang
+let cart = JSON.parse(localStorage.getItem('cart') || '[]')
+
+// Bản an toàn hơn: localStorage có thể bị chặn, hoặc dữ liệu cũ bị hỏng
+function docGio() {
+  try {
+    return JSON.parse(localStorage.getItem('cart') || '[]')
+  } catch (e) {
+    console.warn('Dữ liệu giỏ hàng hỏng, bắt đầu lại từ giỏ trống')
+    return []
+  }
+}
+cart = docGio()
+
+// 2. Hàm lưu
+function luuGio() {
+  try {
+    localStorage.setItem('cart', JSON.stringify(cart))
+  } catch (e) {
+    console.warn('Không lưu được giỏ hàng:', e.message)
+  }
+}
 
 function formatGia(n) {
   return n.toLocaleString('vi-VN') + 'đ'
@@ -63,6 +84,8 @@ function renderProducts() {
 }
 
 function renderCart() {
+  luuGio()   // 3. gọi luuGio() trong renderCart() — không sót chỗ nào
+
   const box = document.getElementById('cartBox')
 
   if (cart.length === 0) {
