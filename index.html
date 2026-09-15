@@ -3,37 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop cà phê — cuối bài 6</title>
+  <title>LAB 07 — Sự kiện và hiệu ứng</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>Shop cà phê</h1>
-  <p class="muted">Trang hiển thị xong. Nút "Thêm giỏ hàng" chưa phản ứng — đó là việc của bài 7.</p>
+  <header><h1>☕ Cà phê WEB1044 — LAB 07</h1></header>
 
-  <h2>Khuyến mãi kết thúc sau</h2>
-  <div id="dong-ho">10</div>
+  <main>
+    <!-- LAB 7.1: khối chào mừng, ban đầu ẩn -->
+    <div id="box">Chào mừng đến với website của chúng tôi</div>
 
-  <h2>Sản phẩm</h2>
-  <div id="ds"></div>
+    <h2>Sản phẩm</h2>
+    <div id="danh-sach" class="grid"></div>
 
-  <h2>Giỏ hàng của bạn</h2>
-  <div class="box">
-    <table>
-      <thead>
-        <tr>
-          <th>Sản phẩm</th>
-          <th class="so">Đơn giá</th>
-          <th class="so">SL</th>
-          <th class="so">Thành tiền</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody id="gio"></tbody>
-    </table>
-    <div id="tong"></div>
-  </div>
+    <!-- LAB 7.4: giỏ hàng -->
+    <section id="gio-khung">
+      <h2>🛒 Giỏ hàng</h2>
+      <div id="gio"></div>
+    </section>
+  </main>
 
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/events.js"></script>
 </body>
 </html>

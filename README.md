@@ -1,20 +1,17 @@
-# l6/end — Bài 6 hoàn chỉnh
+# l7/lab-start — Code khởi tạo Lab 07
 
-**Slide:** Bài 6 · "Tóm tắt bài 6" (demo `l6-end`).
+**Slide:** Bài 7 · "LAB 07" (demo `l7-lab-start`).
 
-Trang shop cà phê sau buổi 6: đã biết **hiển thị**, chưa biết **phản ứng**.
+Trang sản phẩm của bài 6 đã render sẵn. Sinh viên làm bài vào **`js/events.js`**,
+đề bài của cả 7 bài nằm trong comment.
+
+`css/style.css` đã có sẵn `#box`, `#box.hien` và style bảng giỏ hàng — chỉ cần viết JS.
+
+Branch này bằng đúng kết quả `l6/end`. Ai chưa xong bài 6 thì checkout branch này để
+bắt kịp lớp.
 
 ```bash
 npx serve .
+# rồi mở http://localhost:3000
+git diff l6/end l7/lab-start
 ```
-
-| Phần | Hàm | Slide |
-|---|---|---|
-| Danh sách sản phẩm render từ mảng | `renderProducts()` | Render mảng ra giao diện · LAB 6.3 |
-| Bảng giỏ hàng, tổng 420.000đ | `renderCart()` | LAB 6.4 |
-| Đếm ngược khuyến mãi | `chayDongHo()` | setTimeout và setInterval · LAB 6.2 |
-
-**Bấm thử nút "Thêm giỏ hàng"** — không có gì xảy ra. Đó chính là câu chuyển sang bài 7.
-
-Đây là điểm khởi đầu của bài 7 (`l7/lab-start` dùng đúng trạng thái này).
-Lab 06: xem branch `l6/lab-start`.
