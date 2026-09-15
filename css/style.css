@@ -52,3 +52,12 @@ button:hover { background: #e05a0c; }
 .product img { width: 100%; height: 90px; object-fit: cover; border-radius: 8px; }
 .product h3 { margin: 8px 0 4px; font-size: 1rem; }
 .product p { margin: 0; color: #e05a0c; font-weight: 700; }
+
+/* Đồng hồ đếm ngược */
+#dong-ho {
+  font-size: 40px;
+  font-weight: 800;
+  color: #e05a0c;
+  text-align: center;
+  padding: 8px;
+}

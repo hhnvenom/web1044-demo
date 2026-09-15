@@ -89,3 +89,22 @@ ds.innerHTML = products.map(p => `
 // map của bài 4 + template string + join('') = ba dòng render cả mảng.
 // Thiếu join('') thì mảng tự nối bằng dấu phẩy, giao diện lòi ra dấu ",".
 // toLocaleString('vi-VN') đổi 120000 thành 120.000.
+
+// ======================================================
+//  Demo 5 — setTimeout và setInterval
+// ======================================================
+const el = document.getElementById('dong-ho')
+let giay = 10
+
+const id = setInterval(() => {
+  giay--
+  el.textContent = giay
+  if (giay <= 0) {
+    clearInterval(id)
+    el.textContent = 'Hết giờ!'
+  }
+}, 1000)
+
+// setTimeout chạy MỘT lần sau khoảng thời gian.
+// setInterval lặp MÃI MÃI cho tới khi gọi clearInterval(id).
+// id là giá trị setInterval trả về lúc tạo — không giữ id thì không dừng được.

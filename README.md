@@ -1,18 +1,17 @@
-# l6/d4-render-san-pham — Render mảng ra giao diện
+# l6/d5-countdown — setTimeout và setInterval
 
-**Slide:** Bài 6 · "Render mảng ra giao diện" (demo `l6-d4`).
+**Slide:** Bài 6 · "setTimeout và setInterval" (demo `l6-d5`).
 
-Đây là slide quan trọng nhất bài: dữ liệu bài 4 lần đầu xuất hiện trên màn hình.
+Đồng hồ đếm từ 10 về 0 rồi hiện "Hết giờ!".
 
 ```bash
 npx serve .
-git diff l6/d3-tao-phan-tu l6/d4-render-san-pham
+git diff l6/d4-render-san-pham l6/d5-countdown
 ```
 
-`js/data.js` giữ mảng `products`, `js/app.js` lo phần render. Thêm một sản phẩm vào mảng
-rồi tải lại trang — thẻ mới tự hiện, không phải sửa HTML.
+`setInterval` chạy **mãi mãi** cho tới khi `clearInterval(id)`. Quên dọn dẹp là lỗi rò rỉ
+kinh điển: trang càng mở lâu càng chậm. `id` chính là giá trị `setInterval` trả về lúc tạo.
 
-Ảnh sản phẩm để dạng **SVG** trong `img/` cho nhẹ và chạy offline.
-Assignment của bạn thay bằng ảnh thật.
+LAB 6.2 dùng lại đúng kỹ thuật này cho banner đếm ngược bốn ô ngày/giờ/phút/giây.
 
-Branch tiếp theo: `l6/d5-countdown`.
+Branch tiếp theo: `l6/end`.
