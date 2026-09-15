@@ -228,3 +228,22 @@
   p.price = 25000
   console.log(p.price)
 }
+
+// ------------------------------------------------------
+//  Demo 7 — static  (slide "static — thuộc class, không thuộc instance")
+// ------------------------------------------------------
+{
+  class MathUtil {
+    static PI = 3.14
+    static add(a, b) { return a + b }
+  }
+
+  console.log(MathUtil.PI)        // 3.14
+  console.log(MathUtil.add(2, 3)) // 5
+
+  const m = new MathUtil()
+  console.log(m.PI)               // undefined
+  console.log(m.add)              // undefined
+
+  // Hai dòng cuối ra undefined chứ KHÔNG báo lỗi — lại là lỗi im lặng.
+}
