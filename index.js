@@ -86,3 +86,22 @@ const theoGia = [...sanPham].sort((a, b) => a.price - b.price)
 console.log(theoGia.map(p => p.name))   // Mouse, Keyboard, Monitor, Laptop
 
 // Lưu ý: sort() sửa NGAY mảng gốc. Dùng [...mang] để giữ bản gốc.
+
+// ======================================================
+//  Demo 5 — Nối chuỗi phương thức
+// ======================================================
+const students = [
+  { name: 'An', score: 8.2 }, { name: 'Bình', score: 7.5 },
+  { name: 'Chi', score: 9.1 }, { name: 'Khánh', score: 5.9 },
+  { name: 'Minh', score: 9.4 }
+]
+
+const ketQua = students
+  .filter(s => s.score > 8)              // lọc trước cho mảng ngắn lại
+  .sort((a, b) => b.score - a.score)     // rồi sắp xếp
+  .map(s => s.name + ': ' + s.score)     // cuối cùng mới định dạng
+
+console.log(ketQua)
+
+// Thứ tự quan trọng: lọc trước thì sort và map chạy trên ít phần tử hơn.
+// Mỗi bước trả về mảng mới nên nối tiếp được.
