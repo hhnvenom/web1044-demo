@@ -77,3 +77,26 @@ input {
 
 .empty { color: #6b7386; }
 .total { font-size: 1.05rem; }
+
+/* ---- Dark / Light mode (LAB 8.1) ---- */
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark .header,
+body.dark .box,
+body.dark .card,
+body.dark .cart-item { border-color: #333; }
+
+body.dark button,
+body.dark input {
+  background: #1f1f1f;
+  color: #fff;
+  border-color: #444;
+}

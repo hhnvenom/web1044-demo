@@ -1,8 +1,25 @@
 // ==========================================================
-//  Bài 8 · Demo 1 — Ba thao tác với localStorage
-//  Slide: "setItem · getItem · removeItem"
+//  Bài 8 · Demo 3 — Dark / Light mode nhớ lựa chọn
+//  Slide: "Dark mode nhớ lựa chọn"
 //  Chạy: npx serve .   rồi mở http://localhost:3000
 // ==========================================================
+
+// ---------- Demo 3 — Dark / Light mode nhớ lựa chọn ----------
+// Áp theme đã lưu NGAY khi tải trang
+const saved = localStorage.getItem('theme')
+document.body.classList.add(saved || 'light')
+
+document.getElementById('lightBtn').addEventListener('click', () => {
+  document.body.classList.remove('dark')
+  document.body.classList.add('light')
+  localStorage.setItem('theme', 'light')
+})
+
+document.getElementById('darkBtn').addEventListener('click', () => {
+  document.body.classList.remove('light')
+  document.body.classList.add('dark')
+  localStorage.setItem('theme', 'dark')
+})
 
 // ---------- Demo 1 — ba thao tác với localStorage ----------
 const out = document.getElementById('out')
