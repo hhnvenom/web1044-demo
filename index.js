@@ -137,3 +137,33 @@ for (let i = 1; i <= 3; i += 2) console.log(i)
 
 // Lệch một đơn vị (off-by-one) là lỗi kinh điển:
 // < hay <=, bắt đầu từ 0 hay từ 1 — chỉ khác một ký tự nhưng đổi cả kết quả.
+
+// ======================================================
+//  Demo 6 — Toán tử logic và toán tử ba ngôi
+// ======================================================
+const tuoi = 20
+const coVe = true
+
+// && — cả hai phải đúng
+if (tuoi >= 18 && coVe) {
+  console.log('Được vào')
+}
+
+// || — chỉ cần một cái đúng
+const laVIP = false
+if (laVIP || tuoi >= 65) {
+  console.log('Được giảm giá')
+}
+
+// ! — đảo ngược
+if (!coVe) {
+  console.log('Mua vé trước đã')
+}
+
+// Toán tử ba ngôi: một dòng, tương đương cả khối if...else
+const diemSo = 7.5
+const ketQua = diemSo >= 5 ? 'Đậu' : 'Rớt'
+console.log(ketQua)
+
+// Chỉ dùng ba ngôi cho trường hợp đơn giản.
+// Lồng ba ngôi vào nhau thì không ai đọc nổi.
