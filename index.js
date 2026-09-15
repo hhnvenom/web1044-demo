@@ -100,3 +100,62 @@
   console.log(s1.info())
   console.log(s2.info())
 }
+
+// ------------------------------------------------------
+//  Demo 4 — Mỗi instance có dữ liệu riêng  (slide "Mỗi instance có bộ thuộc tính riêng")
+// ------------------------------------------------------
+{
+  class Student {
+    constructor(name, score) {
+      this.name = name
+      this.score = score
+    }
+  }
+
+  const a = new Student('An', 8.2)
+  const b = new Student('Bình', 7.5)
+
+  a.score = 9.0            // chỉ đổi của a
+  console.log(a.score, b.score)   // 9  7.5
+}
+
+// ------------------------------------------------------
+//  Demo 4b — Class Student đầy đủ  (slide "Giải lại bài toán đầu buổi")
+//  Bản đầy đủ: có thêm info() và danh sách ds mà slide không đủ chỗ hiện.
+// ------------------------------------------------------
+{
+  class Student {
+    constructor(maSV, name, age, score) {
+      this.maSV = maSV
+      this.name = name
+      this.age = age
+      this.score = score
+    }
+    xepLoai() {
+      if (this.score >= 8) return 'Giỏi'
+      if (this.score >= 6.5) return 'Khá'
+      return this.score >= 5 ? 'Trung bình' : 'Yếu'
+    }
+    capNhatDiem(diemMoi) { this.score = diemMoi }
+    info() {
+      return this.maSV + ' · ' + this.name + ' · ' + this.score + ' · ' + this.xepLoai()
+    }
+  }
+
+  const ds = [
+    new Student('PS001', 'An', 19, 8.2),
+    new Student('PS002', 'Bình', 20, 7.5),
+    new Student('PS003', 'Chi', 19, 9.1)
+  ]
+
+  const gioi = ds.filter(s => s.xepLoai() === 'Giỏi')
+  console.log(gioi.map(s => s.name))      // [ 'An', 'Chi' ]
+
+  // Xoá Bình: xoá cả object, hai người còn lại không hề bị lệch dữ liệu
+  ds.splice(1, 1)
+  ds.forEach(s => console.log(s.info()))
+
+  // Thi lại: cập nhật điểm qua method, không sửa thẳng thuộc tính
+  ds[0].capNhatDiem(9.5)
+  console.log(ds[0].info())
+}
