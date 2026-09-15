@@ -1,0 +1,10 @@
+{
+  "name": "web1044-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mã nguồn demo môn WEB1044 — Lập trình cơ sở với JavaScript (FPT Polytechnic)",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js"
+  }
+}
