@@ -8,8 +8,9 @@ Toàn bộ code demo của bài 2 trong `index.js`, theo đúng thứ tự trên
 2. `if` lồng nhau so với `else if` (`l2/d2-if-else-nested`)
 3. `switch...case` và bẫy quên `break` (`l2/d3-switch-case`)
 4. Vòng lặp lồng nhau — bảng cửu chương (`l2/d4-vong-lap-long`)
-5. Toán tử ba ngôi, `&&` `||`, `while`, `do...while`, `break`, `continue`
-6. Tính tiền điện bậc thang — đoạn code mở đầu bài 3
+5. Chạy từng bước vòng lặp `for` (`l2/d5-vong-lap-tung-buoc`)
+6. Toán tử ba ngôi, `&&` `||`, `while`, `do...while`, `break`, `continue`
+7. Tính tiền điện bậc thang — đoạn code mở đầu bài 3
 
 ```bash
 node index.js

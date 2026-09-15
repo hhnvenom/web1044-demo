@@ -103,6 +103,30 @@ for (let bang = 2; bang <= 4; bang++) {
 // Tên biến đếm hai vòng phải khác nhau, dùng i cho cả hai là lỗi rất khó tìm.
 
 // ======================================================
+//  Demo 5 — Chạy từng bước vòng lặp for
+//  Ba phần:  khởi tạo  ·  điều kiện  ·  bước nhảy
+// ======================================================
+
+for (let i = 1; i <= 3; i++) {
+  console.log(i)
+}
+
+console.log('--- in ra thứ tự thực thi ---')
+for (let i = 1; i <= 3; i++) {
+  console.log('điều kiện ' + i + ' <= 3 đúng → vào thân, in ra ' + i)
+}
+console.log('i++ → i = 4, 4 <= 3 sai → dừng')
+
+console.log('--- i = 0 thay vì i = 1 ---')
+for (let i = 0; i <= 3; i++) console.log(i)
+
+console.log('--- i < 3 thay vì i <= 3 ---')
+for (let i = 1; i < 3; i++) console.log(i)
+
+console.log('--- i += 2: nhảy hai bước ---')
+for (let i = 1; i <= 3; i += 2) console.log(i)
+
+// ======================================================
 //  Phần còn lại của bài 2
 // ======================================================
 
