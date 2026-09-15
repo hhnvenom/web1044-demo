@@ -1,23 +1,15 @@
-# l6/lab-start — Code khởi tạo Lab 06
+# l6/lab-solution — Đáp án Lab 06 (dành cho giảng viên)
 
-**Slide:** Bài 6 · LAB 06 (demo `l6-lab-start`).
-
-Khung HTML, CSS và dữ liệu sản phẩm đã sẵn. Bạn chỉ viết JavaScript trong `js/app.js`.
+Nối tiếp `l6/lab-start`. **Không chiếu code này lên cho cả lớp chép.**
 
 ```bash
-git fetch origin && git checkout l6/lab-start
 npx serve .
+git diff l6/lab-start l6/lab-solution
 ```
 
-| Phần trong `js/app.js` | Bài |
-|---|---|
-| `openStudentInfo()` | 6.1 — cửa sổ thông tin sinh viên |
-| `renderCountdown()` | 6.2 — banner đếm ngược (hiển thị tĩnh) |
-| `renderProducts()` | 6.3 — danh sách sản phẩm |
-| `renderCart()` | 6.4 — bảng giỏ hàng, tổng 420.000đ |
-| comment cuối file | 6.5 · 6.6 · 6.7 |
+Điểm chấm quan trọng:
 
-**Ảnh sản phẩm** để dạng SVG trong `img/` cho nhẹ và chạy offline — không cần đi tìm ảnh.
-Assignment của bạn thay bằng ảnh thật.
-
-Nộp bài: nén cả thư mục (HTML, CSS, JS) rồi nộp lên LMS trước hạn.
+- **6.1** dùng công thức căn giữa, không hardcode toạ độ
+- **6.2** số có hai chữ số nhờ `padStart(2, '0')`, có `% 24` và `% 60`
+- **6.3** render từ mảng bằng JS, **không** gõ tay ba thẻ `div`
+- **6.4** tổng ra đúng **420.000đ**, và `renderCart()` đã tách thành hàm riêng
