@@ -67,3 +67,17 @@ console.log(a)     // chạy được
 // console.log(b)  // ← lỗi: b is not defined
 
 // Đây là lý do var gây lỗi khó tìm trong file dài.
+
+// ======================================================
+//  Demo 6 — typeof và hai kết quả gây bất ngờ
+// ======================================================
+console.log(typeof "PS12345")
+console.log(typeof 1000.5)
+console.log(typeof true)
+console.log(typeof undefined)
+console.log(typeof null)        // ← "object" — lỗi lịch sử của JS từ 1995
+console.log(typeof [1, 2, 3])   // ← "object" — mảng cũng là object
+
+// Muốn kiểm tra mảng phải dùng Array.isArray()
+console.log(Array.isArray([1, 2, 3]))   // true
+console.log(Array.isArray('chuỗi'))     // false
