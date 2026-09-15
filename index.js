@@ -50,3 +50,38 @@ if (diem < 5) {
 
 // Thứ tự các nhánh rất quan trọng.
 // Đổi "diem < 7" lên trước "diem < 5" thì điểm 3 sẽ ra "Trung bình" — sai.
+
+// ======================================================
+//  Demo 3 — switch...case và bẫy quên break
+// ======================================================
+const chucVu = 'staff'
+let heSo
+
+switch (chucVu) {
+  case 'intern':
+    heSo = 1.0
+    break
+  case 'staff':
+    heSo = 1.5
+    break          // ← XOÁ dòng break này rồi chạy lại: kết quả ra 2.0
+  case 'senior':
+    heSo = 2.0
+    break
+  case 'manager':
+    heSo = 3.0
+    break
+  default:
+    heSo = 0
+}
+
+console.log('Hệ số của ' + chucVu + ' là ' + heSo)
+
+// switch so sánh bằng ===, nên case "1" không khớp với số 1
+const ma = 1
+switch (ma) {
+  case '1':
+    console.log('khớp chuỗi "1"')
+    break
+  default:
+    console.log('không khớp — vì 1 (số) khác "1" (chuỗi)')
+}

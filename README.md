@@ -1,14 +1,13 @@
-# l2/d2-if-else-nested — if lồng nhau và else if
+# l2/d3-switch-case — switch...case và bẫy quên break
 
-**Slide:** Bài 2 · "if lồng nhau" (demo `l2-d2`).
+**Slide:** Bài 2 · "switch case" (demo `l2-d4`).
 
-Cùng bài toán xếp loại viết theo hai cách: lồng nhau và `else if` phẳng.
+Tra hệ số lương theo chức vụ. Trong file có đánh dấu dòng `break` để xoá thử và
+nhìn thấy fall-through, cùng ví dụ `switch` so sánh bằng `===`.
 
 ```bash
 node index.js
-git diff l2/d1-if-else l2/d2-if-else-nested
+git diff l2/d2-if-else-nested l2/d3-switch-case
 ```
 
-Điểm cần nhớ: lồng quá 2 tầng là dấu hiệu nên viết lại; thứ tự nhánh `else if` quyết định kết quả.
-
-Branch tiếp theo: `l2/d3-switch-case`.
+Branch tiếp theo: `l2/d4-vong-lap-long`.
