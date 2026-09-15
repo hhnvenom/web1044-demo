@@ -41,3 +41,62 @@
 
   // Thử bỏ new rồi chạy lại: this trỏ vào global, p là undefined.
 }
+
+// ------------------------------------------------------
+//  Demo 3 — Từ object literal đến class  (slide "Từ object literal đến class")
+// ------------------------------------------------------
+{
+  // Bước 1 — object literal: viết một lần, dùng một lần
+  {
+    const person = {
+      name: 'Nam',
+      age: 30,
+      greet() {
+        console.log('Chào, tôi là ' + this.name)
+      }
+    }
+    person.greet()
+  }
+
+  // Bước 2 và 3 — bọc thành class rồi tạo instance bằng new
+  class Person {
+    constructor(name, age) {
+      this.name = name
+      this.age = age
+    }
+    greet() {
+      console.log('Chào, tôi là ' + this.name)
+    }
+  }
+
+  const person = new Person('Nam', 30)
+  person.greet()
+
+  // Bước 4 — một class, tạo bao nhiêu object cũng được
+  const a = new Person('An', 19)
+  const b = new Person('Bình', 20)
+
+  a.greet()
+  b.greet()
+}
+
+// ------------------------------------------------------
+//  Demo 3b — constructor chạy khi nào  (slide "constructor chạy khi nào")
+// ------------------------------------------------------
+{
+  class Student {
+    constructor(name, age) {
+      console.log('constructor chạy!')
+      this.name = name
+      this.age = age
+    }
+    info() {
+      return this.name + ' - ' + this.age + ' tuổi'
+    }
+  }
+
+  const s1 = new Student('Lan', 20)
+  const s2 = new Student('Hùng', 21)
+  console.log(s1.info())
+  console.log(s2.info())
+}
