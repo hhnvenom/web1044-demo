@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nhà sách Bean — Danh sách sách</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <a class="logo" href="index.html">📚 Nhà sách Bean</a>
+    <nav class="nav">
+      <a href="index.html">Sách</a>
+      <a href="cart.html">Giỏ hàng</a>
+      <a href="register.html">Đăng ký</a>
+    </nav>
+    <div class="actions">
+      <button id="theme-toggle" class="btn" title="Đổi giao diện sáng/tối">🌙</button>
+      <a class="btn btn-primary" href="cart.html">🛒 <span id="cart-count">0</span></a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Sách hay mỗi ngày</h1>
+    <p class="muted">Sáu đầu sách, hai danh mục. Bấm nút lọc để xem theo danh mục.</p>
+
+    <div id="filters" class="filters"></div>
+    <div id="product-list" class="grid"></div>
+  </main>
+
+  <footer class="footer">Assignment mẫu WEB1044 — chủ đề nhà sách</footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/models.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/events.js"></script>
+</body>
+</html>

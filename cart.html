@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nhà sách Bean — Giỏ hàng</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <a class="logo" href="index.html">📚 Nhà sách Bean</a>
+    <nav class="nav">
+      <a href="index.html">Sách</a>
+      <a href="cart.html">Giỏ hàng</a>
+      <a href="register.html">Đăng ký</a>
+    </nav>
+    <div class="actions">
+      <button id="theme-toggle" class="btn" title="Đổi giao diện sáng/tối">🌙</button>
+      <a class="btn btn-primary" href="cart.html">🛒 <span id="cart-count">0</span></a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Giỏ hàng</h1>
+
+    <div id="cart-items"></div>
+
+    <div class="cart-foot">
+      <strong>Tổng tiền: <span id="cart-total">0đ</span></strong>
+      <button id="cart-clear" class="btn">Xoá hết</button>
+      <button id="checkout" class="btn btn-primary">Thanh toán</button>
+      <a class="btn" href="index.html">← Tiếp tục mua</a>
+    </div>
+  </main>
+
+  <footer class="footer">Assignment mẫu WEB1044 — chủ đề nhà sách</footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/models.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/events.js"></script>
+</body>
+</html>

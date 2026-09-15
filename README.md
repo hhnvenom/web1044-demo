@@ -1,59 +1,65 @@
-# WEB1044 — Lập trình cơ sở với JavaScript · Repo demo
+# asm/vi-du-hoan-chinh — Assignment mẫu (chủ đề nhà sách)
 
-Mã nguồn demo đi kèm bộ slide môn **WEB1044 (FPT Polytechnic)**. Mỗi demo là một branch;
-trong một bài, demo sau commit nối tiếp demo trước nên `git diff <branch-trước> <branch-sau>`
-chỉ hiện phần vừa thêm.
+> **Đây là bài MẪU để tham khảo CÁCH TỔ CHỨC, không phải bài để nộp.**
+> Chủ đề cố ý chọn **bán sách** chứ không phải cà phê, để bạn không copy thẳng
+> được từ demo trên lớp. Bài của bạn phải là chủ đề của riêng bạn.
 
-## Cách dùng
+## Chạy thử
 
 ```bash
-git clone https://github.com/hhnvenom/web1044-demo.git
-cd web1044-demo
-git checkout l1/d1-hello-console   # đổi sang branch của demo đang học
-node index.js                      # lệnh chạy ghi trong README của từng branch
+git fetch origin && git checkout asm/vi-du-hoan-chinh
+npx serve .
 ```
 
-## Quy ước tên branch
+Mở `http://localhost:3000`. Hoặc mở `index.html` bằng Live Server trong VS Code.
 
-`l<bài>/d<demo>-<slug>` cho demo · `l<bài>/lab-start` code phát cho sinh viên ·
-`l<bài>/lab-solution` đáp án (giảng viên) · `l<bài>/end` trạng thái hoàn chỉnh cuối bài.
+## Bài này làm được gì
 
-## Danh sách branch
+| Chức năng | Giai đoạn | File |
+|---|---|---|
+| 6 đầu sách, 2 danh mục, đủ 7 trường | GĐ1 | `js/data.js` |
+| `class Product` với 6 phương thức | GĐ1 | `js/models.js` |
+| `class Cart` với add / remove / changeQuantity / getTotal | GĐ1 | `js/models.js` |
+| Render danh sách sách từ dữ liệu | GĐ2 | `js/render.js` |
+| Lọc theo danh mục | GĐ2 | `js/events.js` |
+| Thêm vào giỏ, cộng dồn khi trùng sách | GĐ2 | `Cart.addProduct` |
+| Tăng, giảm, xoá — tổng tiền luôn khớp | GĐ2 | `Cart.changeQuantity` |
+| Giỏ trống có thông báo | GĐ2 | `renderGioHang` |
+| Event delegation (listener ở thẻ cha) | GĐ2 | `js/events.js` |
+| Giỏ hàng không mất khi F5 | Bảo vệ | `js/storage.js` |
+| Dark mode nhớ lựa chọn | Bảo vệ | `apDungTheme` |
+| Form đăng ký kiểm tra 4 ô | Bảo vệ | `luatKiemTra` |
 
-| Branch | Bài | Nội dung | Chạy |
-|---|---|---|---|
-| `l0/d2-kiem-tra-moi-truong` | 0 | Kiểm tra Node đã cài đúng chưa | `node index.js` |
-| `l1/d1-hello-console` | 1 | File JS đầu tiên: khai báo biến, `console.log` | `node index.js` |
-| `l1/d2-ep-kieu` | 1 | Ép kiểu ngầm định: `+` `-` `*` `==` | `node index.js` |
-| `l1/d3-ep-kieu-tuong-minh` | 1 | Ép kiểu tường minh: `Number()` `String()` `Boolean()` `NaN` | `node index.js` |
-| `l1/d4-cach-chay-js` | 1 | Bốn cách chạy JavaScript (console, script, file ngoài, Node) | `node index.js` |
-| `l1/d5-let-const-var` | 1 | `let`, `const` và `var` rò rỉ ra ngoài khối | `node index.js` |
-| `l1/d6-typeof` | 1 | `typeof`, bẫy `typeof null` và `typeof` mảng | `node index.js` |
-| `l1/d7-gia-tri-falsy` | 1 | Sáu giá trị falsy | `node index.js` |
-| `l1/d8-so-sanh-bang` | 1 | So sánh `==` và `===` | `node index.js` |
-| `l1/end` | 1 | Toàn bộ demo bài 1 (`typeof`, `let/const/var`, falsy, `===`) | `node index.js` |
-| `l1/lab-start` | 1 | Khung 4 bài của Lab 01 | `node index.js` |
-| `l1/lab-solution` | 1 | Đáp án Lab 01 (chỉ giảng viên) | `node index.js` |
-| `l2/d1-if-else` | 2 | `if...else` kiểm tra số chẵn / lẻ | `node index.js` |
-| `l2/d2-if-else-nested` | 2 | `if` lồng nhau so với `else if` | `node index.js` |
-| `l2/d3-switch-case` | 2 | `switch...case` và bẫy quên `break` | `node index.js` |
-| `l2/d4-vong-lap-long` | 2 | Vòng lặp lồng nhau — bảng cửu chương | `node index.js` |
-| `l2/d5-vong-lap-tung-buoc` | 2 | Chạy từng bước vòng lặp `for` và ba biến thể | `node index.js` |
-| `l2/d6-toan-tu-logic` | 2 | Toán tử logic và toán tử ba ngôi | `node index.js` |
-| `l2/d7-while-do-while` | 2 | `while` và `do...while` | `node index.js` |
-| `l2/d8-break-continue` | 2 | `break` và `continue` | `node index.js` |
-| `l2/end` | 2 | Toàn bộ demo bài 2 (ternary, `while`, `break`/`continue`, tiền điện) | `node index.js` |
-| `l2/lab-start` | 2 | Khung 6 bài của Lab 02 | `node bai1.js` |
-| `l2/lab-solution` | 2 | Đáp án Lab 02 (chỉ giảng viên) | `node bai1.js` |
-| `l3/d2-tach-ham` | 3 | Tách đoạn tính tiền điện của bài 2 thành hàm | `node index.js` |
-| `l3/d3-cac-cach-khai-bao` | 3 | Declaration, expression và arrow function | `node index.js` |
-| `l3/d8-ham-goi-ham` | 3 | `layHeSo` và `tinhLuong` — mỗi hàm một việc | `node index.js` |
-| `l3/end` | 3 | Toàn bộ demo bài 3 (tham số, `return`, phạm vi biến, call stack) | `node index.js` |
-| `l3/lab-start` | 3 | Khung 6 bài của Lab 03, kèm bộ test cho bài 3.4 | `node bai1.js` |
-| `l3/lab-solution` | 3 | Đáp án Lab 03 (chỉ giảng viên) | `node bai1.js` |
-| `l8/end` | 8 | Shop cà phê — thành phẩm cuối môn | `npx serve .` |
+## Cấu trúc
 
-Các bài 4–7 sẽ được bổ sung khi soạn slide tương ứng.
+```
+index.html        danh sách sách + lọc danh mục
+cart.html         giỏ hàng đầy đủ
+register.html     form đăng ký
+css/style.css     giao diện, có biến CSS cho dark mode
+js/data.js        6 sản phẩm + hàm timSanPham
+js/models.js      class Product, class Cart
+js/storage.js     localStorage, mọi thao tác bọc try/catch
+js/render.js      các hàm vẽ ra HTML
+js/events.js      gắn sự kiện, chạy render lần đầu
+```
 
-Demo trong cùng một bài **commit nối tiếp nhau**, và `l<n>/end` là điểm khởi đầu của bài kế tiếp,
-nên `git diff l2/d1-if-else l2/d2-if-else-nested` chỉ hiện phần vừa thêm.
+Thứ tự nhúng script rất quan trọng: `data` → `models` → `storage` → `render` → `events`.
+File sau dùng lại biến và class của file trước.
+
+## Bốn điểm đáng học ở bài này
+
+1. **Giỏ hàng chỉ lưu `{ id, qty }`**, không lưu cả object sản phẩm.
+   Giá đổi thì giỏ vẫn lấy giá mới nhất qua `timSanPham(id)`.
+2. **Sửa dữ liệu trước, render lại sau.** Không có chỗ nào sửa thẳng HTML.
+   Đây là lý do tổng tiền không bao giờ lệch.
+3. **Event delegation.** Danh sách sách được render lại mỗi lần lọc, nên listener
+   phải gắn ở thẻ cha `#product-list`, không gắn cho từng nút.
+4. **`localStorage` luôn bọc `try/catch`.** Người dùng có thể tắt nó, hoặc dữ liệu
+   cũ trong máy bị hỏng — không bọc thì cả trang chết trắng.
+
+## Ảnh sản phẩm
+
+Bài mẫu dùng **emoji** (📕 📗 📘) làm ảnh bìa cho gọn, không có file ảnh nhị phân.
+Trong bài của bạn hãy để ảnh thật trong `img/` rồi đổi `imgUrl` thành `img/sach1.jpg`.
+Nhớ dùng **đường dẫn tương đối** — đây là chỗ mất điểm oan nhất khi nộp bài.

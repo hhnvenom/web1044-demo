@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nhà sách Bean — Đăng ký</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <a class="logo" href="index.html">📚 Nhà sách Bean</a>
+    <nav class="nav">
+      <a href="index.html">Sách</a>
+      <a href="cart.html">Giỏ hàng</a>
+      <a href="register.html">Đăng ký</a>
+    </nav>
+    <div class="actions">
+      <button id="theme-toggle" class="btn" title="Đổi giao diện sáng/tối">🌙</button>
+      <a class="btn btn-primary" href="cart.html">🛒 <span id="cart-count">0</span></a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Đăng ký thành viên</h1>
+    <p class="muted">Nhận ưu đãi 10% cho đơn đầu tiên.</p>
+
+    <form id="register-form" class="form" novalidate>
+      <div class="field">
+        <label for="name">Họ tên</label>
+        <input id="name" name="name" type="text" placeholder="Nguyen Van A">
+        <small class="error" data-for="name"></small>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="a@example.com">
+        <small class="error" data-for="email"></small>
+      </div>
+
+      <div class="field">
+        <label for="phone">Số điện thoại</label>
+        <input id="phone" name="phone" type="tel" placeholder="09xxxxxxxx">
+        <small class="error" data-for="phone"></small>
+      </div>
+
+      <div class="field">
+        <label for="password">Mật khẩu</label>
+        <input id="password" name="password" type="password" placeholder="Ít nhất 6 ký tự">
+        <small class="error" data-for="password"></small>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Đăng ký</button>
+      <p id="register-message" class="message"></p>
+    </form>
+  </main>
+
+  <footer class="footer">Assignment mẫu WEB1044 — chủ đề nhà sách</footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/models.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/events.js"></script>
+</body>
+</html>
