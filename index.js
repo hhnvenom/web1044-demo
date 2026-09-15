@@ -43,6 +43,12 @@ console.log(sv)
 // ======================================================
 //  Demo 3 — map, filter, reduce
 // ======================================================
+
+// map trên mảng số — ví dụ tối giản trên slide
+const numbers = [1, 2, 3, 4]
+const gapDoi = numbers.map(n => n * 2)
+console.log(gapDoi)              // [2, 4, 6, 8] — cùng số phần tử, giá trị khác
+
 const products = [
   { name: 'Cà phê Arabica', price: 120000 },
   { name: 'Cà phê Robusta', price: 90000 },
