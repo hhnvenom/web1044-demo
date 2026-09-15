@@ -3,22 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bài 6 · Demo 1 — window.open</title>
+  <title>Bài 6 · Demo 2 — Chọn và sửa phần tử</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>BOM — điều khiển cửa sổ trình duyệt</h1>
-  <p class="muted">Bấm nút để mở một cửa sổ mới, kích thước 600 × 400 và nằm chính giữa màn hình.</p>
+  <h1 id="tieu-de">Danh sách sản phẩm</h1>
+  <p class="gia">120.000đ</p>
+  <p class="gia">90.000đ</p>
 
   <div class="box">
     <button onclick="openStudentInfo()">Mở thông tin sinh viên</button>
-    <p class="muted" style="margin-bottom:0">
-      Trình duyệt chặn popup thì sẽ không thấy gì — hãy cho phép popup cho trang này.
-    </p>
   </div>
 
   <div class="box">
-    <h2 style="margin-top:0">Các đối tượng BOM khác</h2>
+    <h2 style="margin-top:0">textContent hay innerHTML</h2>
+    <p class="muted">textContent:</p>
+    <div id="a" class="o-thu"></div>
+    <p class="muted">innerHTML:</p>
+    <div id="b" class="o-thu"></div>
+  </div>
+
+  <div class="box">
+    <h2 style="margin-top:0">style và classList</h2>
+    <p id="p1">Cà phê Arabica</p>
+    <p id="p2">Cà phê Robusta</p>
+  </div>
+
+  <div class="box">
+    <h2 style="margin-top:0">Các đối tượng BOM</h2>
     <div id="thong-tin" class="muted"></div>
   </div>
 

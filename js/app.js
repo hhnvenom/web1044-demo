@@ -27,3 +27,37 @@ document.getElementById('thong-tin').innerHTML =
 
 // location.href = 'https://fpt.edu.vn' sẽ CHUYỂN TRANG — bỏ comment để thử.
 // history.back() quay lại trang trước.
+
+// ======================================================
+//  Demo 2 — Chọn phần tử trong trang
+// ======================================================
+console.log(document.getElementById('tieu-de'))
+console.log(document.querySelector('.gia'))       // phần tử ĐẦU TIÊN
+console.log(document.querySelectorAll('.gia'))    // TẤT CẢ
+
+document.getElementById('tieu-de').textContent = 'Menu hôm nay'
+
+// querySelectorAll trả về DANH SÁCH — phải duyệt mới sửa được từng cái
+document.querySelectorAll('.gia').forEach(function (el) {
+  el.style.fontWeight = 'bold'
+})
+
+// ------------------------------------------------------
+//  textContent hay innerHTML
+// ------------------------------------------------------
+const chuoi = '<b>Cà phê</b> Arabica'
+
+document.getElementById('a').textContent = chuoi
+document.getElementById('b').innerHTML   = chuoi
+
+// textContent hiện nguyên văn thẻ <b>. innerHTML chạy nó như HTML.
+// Dữ liệu do NGƯỜI DÙNG nhập thì luôn dùng textContent — tránh rủi ro XSS.
+
+// ------------------------------------------------------
+//  Đổi style và class
+// ------------------------------------------------------
+document.getElementById('p1').style.color = 'red'
+document.getElementById('p2').classList.add('noi-bat')
+
+// Ưu tiên classList: CSS lo hình thức, JS chỉ bật tắt trạng thái.
+// classList có add, remove, toggle và contains.

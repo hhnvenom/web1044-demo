@@ -33,3 +33,7 @@ button:hover { background: #e05a0c; }
   margin-top: 12px;
   background: #fff;
 }
+
+/* Ô minh hoạ textContent / innerHTML */
+.o-thu { border: 1px dashed #cbd2dd; border-radius: 6px; padding: 6px 8px; margin-bottom: 8px; }
+.noi-bat { background: gold; font-weight: bold; }

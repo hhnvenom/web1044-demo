@@ -1,18 +1,20 @@
-# l6/d1-window-open — Mở cửa sổ mới bằng BOM
+# l6/d2-chon-phan-tu — Chọn và sửa phần tử
 
-**Slide:** Bài 6 · "window.open" (demo `l6-d1`), và "Các đối tượng BOM".
+**Slide:** Bài 6 · "Chọn phần tử" (demo `l6-d2`), kèm hai slide liền sau:
+"textContent hay innerHTML" và "Đổi style và class".
 
-`window.open` mở một cửa sổ mới. Công thức căn giữa:
-`(kích thước màn hình − kích thước cửa sổ) / 2`. Đây chính là **LAB 6.1**.
+| Cách chọn | Trả về |
+|---|---|
+| `getElementById('id')` | một phần tử |
+| `querySelector('.class')` | phần tử **đầu tiên** khớp |
+| `querySelectorAll('.class')` | **danh sách**, phải duyệt mới sửa được từng cái |
 
 ```bash
 npx serve .
+git diff l6/d1-window-open l6/d2-chon-phan-tu
 ```
 
-Mở `http://localhost:3000` rồi bấm nút. **Cho phép popup** cho trang này, nếu không
-trình duyệt chặn và bạn sẽ tưởng code sai.
+Mở F12 xem console để thấy ba dòng `console.log` đầu tiên.
+Tiêu đề trang đổi thành "Menu hôm nay" ngay khi tải.
 
-LAB 6.1 yêu cầu hiện đủ MSSV, họ tên, ngành, lớp — demo này mới chỉ ghi một dòng tiêu đề,
-phần còn lại là việc của bạn.
-
-Branch tiếp theo: `l6/d2-chon-phan-tu`.
+Branch tiếp theo: `l6/d3-tao-phan-tu`.
