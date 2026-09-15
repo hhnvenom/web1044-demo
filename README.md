@@ -32,6 +32,7 @@ node index.js                      # lệnh chạy ghi trong README của từng
 | `l2/d2-if-else-nested` | 2 | `if` lồng nhau so với `else if` | `node index.js` |
 | `l2/d3-switch-case` | 2 | `switch...case` và bẫy quên `break` | `node index.js` |
 | `l2/d4-vong-lap-long` | 2 | Vòng lặp lồng nhau — bảng cửu chương | `node index.js` |
+| `l2/d5-vong-lap-tung-buoc` | 2 | Chạy từng bước vòng lặp `for` và ba biến thể | `node index.js` |
 | `l2/end` | 2 | Toàn bộ demo bài 2 (ternary, `while`, `break`/`continue`, tiền điện) | `node index.js` |
 | `l2/lab-start` | 2 | Khung 6 bài của Lab 02 | `node bai1.js` |
 | `l2/lab-solution` | 2 | Đáp án Lab 02 (chỉ giảng viên) | `node bai1.js` |
