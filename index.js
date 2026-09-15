@@ -38,3 +38,11 @@ console.log(+"123")           // 123
 console.log('--- không đổi được thì ra NaN ---')
 console.log(Number("abc"))    // NaN
 console.log(Number("10") + 5) // 15 — cách sửa cho bug "10" + 5
+
+// ======================================================
+//  Demo 4 — Bốn cách chạy JavaScript
+//  Đây là cách 4: chạy file .js bằng Node (chính file này).
+// ======================================================
+console.log("Xin chào WEB1044")
+console.log(2 + 3)
+console.log("2" + 3)   // mồi nhử cho phần ép kiểu

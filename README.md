@@ -1,14 +1,17 @@
-# l1/d3-ep-kieu-tuong-minh — Ép kiểu tường minh
+# l1/d4-cach-chay-js — Bốn cách chạy JavaScript
 
-**Slide:** Bài 1 · "Ép kiểu tường minh: `Number()`, `String()`, `Boolean()`" (demo `l1-d8`).
+**Slide:** Bài 1 · "JavaScript chạy ở đâu" (demo `l1-d4`).
 
-Nối tiếp `l1/d2-ep-kieu`: cách chủ động đổi kiểu và cách nhận biết `NaN`.
+| Cách | Làm thế nào |
+|---|---|
+| 1. Console trình duyệt | F12 → tab Console, gõ thẳng rồi Enter |
+| 2. Thẻ `<script>` trong HTML | xem `index.html` |
+| 3. File JS ngoài | `js/app.js`, nhúng bằng `<script src>` |
+| 4. Node.js | `node index.js` |
 
 ```bash
-node index.js
-git diff l1/d2-ep-kieu l1/d3-ep-kieu-tuong-minh
+node index.js                 # cách 4
+# cách 2 và 3: mở index.html bằng Live Server trong VS Code
 ```
 
-Quy tắc: dữ liệu vào từ người dùng luôn là chuỗi — ép bằng `Number()` **trước khi** tính.
-
-Branch tiếp theo: `l1/end`.
+Branch tiếp theo: `l1/d5-let-const-var`.

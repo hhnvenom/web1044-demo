@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bốn cách chạy JavaScript</title>
+</head>
+<body>
+  <h1>Bốn cách chạy JavaScript</h1>
+  <ol>
+    <li>Console trình duyệt: nhấn F12 → tab Console, gõ <code>console.log("Hi")</code></li>
+    <li>Thẻ script trong HTML — xem đoạn dưới cùng file này</li>
+    <li>File JS ngoài — <code>js/app.js</code></li>
+    <li>Node.js — <code>node index.js</code> trong terminal</li>
+  </ol>
+
+  <!-- Cách 2 — JS viết thẳng trong HTML -->
+  <script>
+    console.log('Xin chào từ thẻ script trong HTML')
+    document.body.insertAdjacentHTML('beforeend', '<p>Thẻ script trong HTML đã chạy.</p>')
+  </script>
+
+  <!-- Cách 3 — file JS ngoài -->
+  <script src="js/app.js"></script>
+</body>
+</html>
