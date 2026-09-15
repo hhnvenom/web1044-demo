@@ -1,33 +1,21 @@
-# WEB1044 — Lập trình cơ sở với JavaScript · Repo demo
+# l2/lab-start — Code khởi tạo Lab 02
 
-Mã nguồn demo đi kèm bộ slide môn **WEB1044 (FPT Polytechnic)**. Mỗi demo là một branch;
-trong một bài, demo sau commit nối tiếp demo trước nên `git diff <branch-trước> <branch-sau>`
-chỉ hiện phần vừa thêm.
+**Slide:** Bài 2 · LAB 02 (demo `l2-lab-start`).
 
-## Cách dùng
+Khung file và đề bài cho 6 bài của Lab 02. Sinh viên làm trực tiếp vào từng file.
 
 ```bash
-git clone https://github.com/hhnvenom/web1044-demo.git
-cd web1044-demo
-git checkout l1/d1-hello-console   # đổi sang branch của demo đang học
-node index.js                      # lệnh chạy ghi trong README của từng branch
+git fetch origin && git checkout l2/lab-start
+node bai1.js      # chạy từng bài
 ```
 
-## Quy ước tên branch
+| File | Bài | Nội dung |
+|---|---|---|
+| `bai1.js` | 2.1 | Kiểm tra số chẵn / lẻ |
+| `bai2.js` | 2.2 + 2.2b | Tiền điện bậc thang và bài toán ngược |
+| `bai3.js` | 2.3 | Lương theo chức vụ và ngày công |
+| `bai4.js` | 2.4 | Bảng cửu chương 2 đến 9 |
+| `bai5.js` | 2.5 | Kiểm tra số nguyên tố |
+| `bai6.js` | 2.6 | Bài mở rộng |
 
-`l<bài>/d<demo>-<slug>` cho demo · `l<bài>/lab-start` code phát cho sinh viên ·
-`l<bài>/lab-solution` đáp án (giảng viên) · `l<bài>/end` trạng thái hoàn chỉnh cuối bài.
-
-## Danh sách branch
-
-| Branch | Bài | Nội dung | Chạy |
-|---|---|---|---|
-| `l1/d1-hello-console` | 1 | File JS đầu tiên: khai báo biến, `console.log`, chạy bằng Node | `node index.js` |
-| `l1/d2-ep-kieu` | 1 | Ép kiểu ngầm định: `+` `-` `*` `==` | `node index.js` |
-| `l1/d3-ep-kieu-tuong-minh` | 1 | Ép kiểu tường minh: `Number()` `String()` `Boolean()` `+x` `NaN` | `node index.js` |
-| `l1/end` | 1 | Toàn bộ demo bài 1 (thêm `typeof`, `let/const/var`, falsy, `==`/`===`) | `node index.js` |
-| `l1/lab-start` | 1 | Khung 4 bài của Lab 01 kèm đề bài trong comment | `node index.js` |
-| `l1/lab-solution` | 1 | Đáp án Lab 01 (chỉ giảng viên) | `node index.js` |
-| `l8/end` | 8 | Shop cà phê — thành phẩm cuối môn: render sản phẩm, giỏ hàng, dark mode, localStorage, form đăng ký | `npx serve .` |
-
-Các bài 2–8 sẽ được bổ sung khi soạn slide tương ứng.
+Nộp bài: nén cả thư mục và nộp lên LMS trước hạn.
