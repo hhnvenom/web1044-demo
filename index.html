@@ -3,30 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bài 6 · Demo 5 — setInterval và countdown</title>
+  <title>Shop cà phê — cuối bài 6</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1 id="tieu-de">Danh sách sản phẩm</h1>
-  <p class="muted">Ba thẻ dưới đây sinh ra từ mảng <code>products</code>, không viết tay HTML.</p>
-
-  <div id="ds"></div>
+  <h1>Shop cà phê</h1>
+  <p class="muted">Trang hiển thị xong. Nút "Thêm giỏ hàng" chưa phản ứng — đó là việc của bài 7.</p>
 
   <h2>Khuyến mãi kết thúc sau</h2>
   <div id="dong-ho">10</div>
 
+  <h2>Sản phẩm</h2>
+  <div id="ds"></div>
+
+  <h2>Giỏ hàng của bạn</h2>
   <div class="box">
-    <h2 style="margin-top:0">Các phần đã học ở demo trước</h2>
-    <p class="gia">120.000đ</p>
-    <p class="gia">90.000đ</p>
-    <p class="muted">textContent:</p>
-    <div id="a" class="o-thu"></div>
-    <p class="muted">innerHTML:</p>
-    <div id="b" class="o-thu"></div>
-    <p id="p1">Cà phê Arabica</p>
-    <p id="p2">Cà phê Robusta</p>
-    <div id="thong-tin" class="muted"></div>
-    <button onclick="openStudentInfo()">Mở thông tin sinh viên</button>
+    <table>
+      <thead>
+        <tr>
+          <th>Sản phẩm</th>
+          <th class="so">Đơn giá</th>
+          <th class="so">SL</th>
+          <th class="so">Thành tiền</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="gio"></tbody>
+    </table>
+    <div id="tong"></div>
   </div>
 
   <script src="js/data.js"></script>

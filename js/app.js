@@ -1,110 +1,72 @@
 // ======================================================
-//  Bài 6 · Demo 1 — window.open: mở cửa sổ mới, căn giữa
+//  Bài 6 — Trạng thái hoàn chỉnh cuối buổi
+//  Trang đã biết HIỂN THỊ. Chưa biết PHẢN ỨNG — bài 7 lo phần đó.
 // ======================================================
 
-function openStudentInfo() {
-  const width = 600
-  const height = 400
-
-  // Tính vị trí chính giữa màn hình
-  const left = (screen.width - width) / 2
-  const top = (screen.height - height) / 2
-
-  const w = window.open('', 'StudentInfo',
-    `width=${width},height=${height},top=${top},left=${left}`)
-
-  w.document.write(`<h1>Thông tin sinh viên</h1>`)
-  w.document.close()
-}
-
-// ------------------------------------------------------
-// Vài đối tượng BOM khác — chỉ đọc, không đổi gì
-// ------------------------------------------------------
-document.getElementById('thong-tin').innerHTML =
-  '<p>screen — màn hình: ' + screen.width + ' x ' + screen.height + '</p>' +
-  '<p>location — địa chỉ trang: ' + location.href + '</p>' +
-  '<p>navigator — trình duyệt: ' + navigator.userAgent.slice(0, 40) + '...</p>'
-
-// location.href = 'https://fpt.edu.vn' sẽ CHUYỂN TRANG — bỏ comment để thử.
-// history.back() quay lại trang trước.
-
-// ======================================================
-//  Demo 2 — Chọn phần tử trong trang
-// ======================================================
-console.log(document.getElementById('tieu-de'))
-console.log(document.querySelector('.gia'))       // phần tử ĐẦU TIÊN
-console.log(document.querySelectorAll('.gia'))    // TẤT CẢ
-
-document.getElementById('tieu-de').textContent = 'Menu hôm nay'
-
-// querySelectorAll trả về DANH SÁCH — phải duyệt mới sửa được từng cái
-document.querySelectorAll('.gia').forEach(function (el) {
-  el.style.fontWeight = 'bold'
-})
-
-// ------------------------------------------------------
-//  textContent hay innerHTML
-// ------------------------------------------------------
-const chuoi = '<b>Cà phê</b> Arabica'
-
-document.getElementById('a').textContent = chuoi
-document.getElementById('b').innerHTML   = chuoi
-
-// textContent hiện nguyên văn thẻ <b>. innerHTML chạy nó như HTML.
-// Dữ liệu do NGƯỜI DÙNG nhập thì luôn dùng textContent — tránh rủi ro XSS.
-
-// ------------------------------------------------------
-//  Đổi style và class
-// ------------------------------------------------------
-document.getElementById('p1').style.color = 'red'
-document.getElementById('p2').classList.add('noi-bat')
-
-// Ưu tiên classList: CSS lo hình thức, JS chỉ bật tắt trạng thái.
-// classList có add, remove, toggle và contains.
-
-// ======================================================
-//  Demo 3 — Tạo phần tử mới và gắn vào trang
-// ======================================================
-const div = document.createElement('div')
-div.textContent = 'Cà phê Arabica'
-div.classList.add('product')
-document.body.appendChild(div)
-
-// Ba dòng đầu chỉ tạo object TRONG BỘ NHỚ.
-// Không có appendChild thì không ai nhìn thấy gì — đây là lỗi hay gặp nhất của bài.
-
-// ======================================================
-//  Demo 4 — Render mảng products ra giao diện
-//  (products nằm ở js/data.js, nạp trước file này)
-// ======================================================
+// ---------- Render danh sách sản phẩm ----------
 const ds = document.getElementById('ds')
 
-ds.innerHTML = products.map(p => `
-  <div class="product">
-    <h3>${p.name}</h3>
-    <p>${p.price.toLocaleString('vi-VN')}đ</p>
-  </div>
-`).join('')
+function renderProducts() {
+  ds.innerHTML = products.map(p => `
+    <div class="product">
+      <img src="${p.imgUrl}" alt="${p.name}">
+      <h3>${p.name}</h3>
+      <p>${p.price.toLocaleString('vi-VN')}đ</p>
+      <button>Thêm giỏ hàng</button>
+    </div>
+  `).join('')
+}
 
-// map của bài 4 + template string + join('') = ba dòng render cả mảng.
-// Thiếu join('') thì mảng tự nối bằng dấu phẩy, giao diện lòi ra dấu ",".
-// toLocaleString('vi-VN') đổi 120000 thành 120.000.
+// ---------- Render bảng giỏ hàng ----------
+// Dữ liệu đúng bằng ảnh mẫu của LAB 6.4: tổng phải ra 420.000đ
+const cart = [
+  { name: 'Cà phê xanh', price: 180000, qty: 1 },
+  { name: 'Cà phê Arabica', price: 120000, qty: 2 }
+]
 
-// ======================================================
-//  Demo 5 — setTimeout và setInterval
-// ======================================================
-const el = document.getElementById('dong-ho')
-let giay = 10
+function renderCart() {
+  const gio = document.getElementById('gio')
 
-const id = setInterval(() => {
-  giay--
-  el.textContent = giay
-  if (giay <= 0) {
-    clearInterval(id)
-    el.textContent = 'Hết giờ!'
+  if (cart.length === 0) {
+    gio.innerHTML = '<tr><td colspan="5">Giỏ hàng đang trống.</td></tr>'
+    document.getElementById('tong').textContent = ''
+    return
   }
-}, 1000)
 
-// setTimeout chạy MỘT lần sau khoảng thời gian.
-// setInterval lặp MÃI MÃI cho tới khi gọi clearInterval(id).
-// id là giá trị setInterval trả về lúc tạo — không giữ id thì không dừng được.
+  gio.innerHTML = cart.map(item => `
+    <tr>
+      <td>${item.name}</td>
+      <td class="so">${item.price.toLocaleString('vi-VN')}đ</td>
+      <td class="so">${item.qty}</td>
+      <td class="so">${(item.price * item.qty).toLocaleString('vi-VN')}đ</td>
+      <td class="so"><button>Xoá</button></td>
+    </tr>
+  `).join('')
+
+  const tong = cart.reduce((t, item) => t + item.price * item.qty, 0)
+  document.getElementById('tong').textContent =
+    'Tổng: ' + tong.toLocaleString('vi-VN') + 'đ'
+}
+
+// ---------- Đếm ngược ----------
+function chayDongHo() {
+  const el = document.getElementById('dong-ho')
+  let giay = 10
+
+  const id = setInterval(() => {
+    giay--
+    el.textContent = giay
+    if (giay <= 0) {
+      clearInterval(id)
+      el.textContent = 'Hết giờ!'
+    }
+  }, 1000)
+}
+
+// ---------- Khởi động ----------
+renderProducts()
+renderCart()
+chayDongHo()
+
+// Tách renderProducts() và renderCart() thành hàm riêng NGAY TỪ BÂY GIỜ.
+// Bài 7 sẽ gọi lại chúng sau mỗi lần giỏ hàng thay đổi.

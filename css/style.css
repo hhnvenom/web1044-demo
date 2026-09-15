@@ -34,10 +34,6 @@ button:hover { background: #e05a0c; }
   background: #fff;
 }
 
-/* Ô minh hoạ textContent / innerHTML */
-.o-thu { border: 1px dashed #cbd2dd; border-radius: 6px; padding: 6px 8px; margin-bottom: 8px; }
-.noi-bat { background: gold; font-weight: bold; }
-
 /* Thẻ sản phẩm */
 #ds { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
 
@@ -61,3 +57,10 @@ button:hover { background: #e05a0c; }
   text-align: center;
   padding: 8px;
 }
+
+/* Bảng giỏ hàng */
+table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+th, td { padding: 8px; border-bottom: 1px solid #e6e8ee; text-align: left; }
+th { background: #f7f8fb; font-size: 0.85rem; }
+td.so, th.so { text-align: right; }
+#tong { text-align: right; font-weight: 800; color: #f37021; margin-top: 10px; font-size: 1.05rem; }
