@@ -1,22 +1,17 @@
-# l5/lab-start — Code khởi tạo Lab 05
+# l5/lab-solution — Đáp án Lab 05 (dành cho giảng viên)
 
-**Slide:** Bài 5 · LAB 05 (demo `l5-lab-start`).
-
-Khung file và đề bài cho 6 bài của Lab 05.
+Nối tiếp `l5/lab-start`. Không phát cho sinh viên trước hạn nộp.
 
 ```bash
-git fetch origin && git checkout l5/lab-start
-node bai1.js
+node bai3.js
+git diff l5/lab-start l5/lab-solution
 ```
 
-| File | Bài | Nội dung |
-|---|---|---|
-| `bai1.js` | 5.1 | `Category` bằng function constructor |
-| `bai2.js` | 5.2 | `class Product` với 5 method |
-| `bai3.js` | 5.3 | `class Cart` ★ quan trọng nhất |
-| `bai4.js` | 5.4 | Nhờ AI bổ sung method |
-| `bai5.js` | 5.5 | Nhờ AI mô tả nghiệp vụ rồi tạo class |
-| `bai6.js` | 5.6 | Bài mở rộng |
+Điểm chấm quan trọng:
 
-**Bài 5.3 dùng lại ở bài 6, 7, 8 và trong assignment** — làm cho chắc.
-**Bài 5.5 làm trên chủ đề assignment của bạn.**
+- Bài 5.2: `getDiscountedPrice` phải **trả về** giá mới, không sửa `this.price`;
+  `isInStock()` trả về **boolean**; `quantity` không xuống dưới 0.
+- Bài 5.3: thêm sản phẩm **đã có** phải cộng dồn `qty`, không tạo dòng mới;
+  `getTotal` dùng `reduce`; giỏ trống có thông báo.
+- Bài 5.4 và 5.5: phải có **prompt đã dùng** và **nhận xét của sinh viên**,
+  không chỉ dán kết quả AI.
