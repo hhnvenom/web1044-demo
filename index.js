@@ -105,3 +105,44 @@ console.log(ketQua)
 
 // Thứ tự quan trọng: lọc trước thì sort và map chạy trên ít phần tử hơn.
 // Mỗi bước trả về mảng mới nên nối tiếp được.
+
+// ======================================================
+//  Phần còn lại của bài 4
+// ======================================================
+
+console.log('--- splice và slice ---')
+const a = ['A', 'B', 'C', 'D', 'E']
+const cat = a.slice(1, 3)          // lấy ra, KHÔNG đổi mảng gốc
+console.log(cat, '· gốc:', a)
+const xoa = a.splice(1, 2)         // xoá tại chỗ, ĐỔI mảng gốc
+console.log(xoa, '· gốc:', a)
+
+console.log('--- duyệt mảng ---')
+const diem = [8, 6.5, 9]
+for (const d of diem) console.log('for...of:', d)
+diem.forEach((d, i) => console.log('forEach:', i, d))
+
+console.log('--- find và findIndex ---')
+// products ở Demo 3 chưa có id, nên dùng bản có id để minh hoạ find
+const dsSP = [
+  { id: 1, name: 'Cà phê Arabica', price: 120000 },
+  { id: 2, name: 'Cà phê Robusta', price: 90000 },
+  { id: 3, name: 'Cà phê xanh', price: 180000 }
+]
+console.log(dsSP.find(p => p.id === 2))
+console.log(dsSP.findIndex(p => p.id === 2))
+console.log(dsSP.find(p => p.id === 99))      // undefined khi không thấy
+
+console.log('--- mảng đối tượng: tổng tồn kho ---')
+const kho = [
+  { name: 'Laptop', price: 1200, qty: 3 },
+  { name: 'Mouse', price: 30, qty: 20 },
+  { name: 'Keyboard', price: 75, qty: 10 }
+]
+const tongKho = kho.reduce((t, p) => t + p.price * p.qty, 0)
+console.log('Tổng giá trị tồn kho:', tongKho)
+
+console.log('--- JSON ---')
+const chuoi = JSON.stringify(dsSP[0])
+console.log(chuoi)
+console.log(JSON.parse(chuoi).name)
