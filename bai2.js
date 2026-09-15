@@ -1,24 +1,40 @@
-// BÀI 2.2 — Tính tiền điện theo bậc thang
-// Yêu cầu:
-//   1. Biết trước số kWh tiêu thụ
-//   2. Tính tiền điện theo 3 bậc giá
-//   3. In ra tổng tiền
-// Tiêu chí: đúng với cả 3 trường hợp (dưới 50, 51-100, trên 100 kWh);
-//           KHÔNG tính toàn bộ số điện theo một mức giá duy nhất
-//
-// Bảng giá:  0-50 kWh: 1.800đ  |  51-100 kWh: 2.300đ  |  trên 100 kWh: 3.000đ
-// Kiểm tra:  30 kWh → 54.000đ   80 kWh → 159.000đ   335 kWh → 910.000đ
+// BÀI 2.2 — Tính tiền điện theo bậc thang (ĐÁP ÁN)
 
 const soKwh = 335
+let tien = 0
 
-// TODO: viết code của bạn dưới đây
+if (soKwh <= 50) {
+  tien = soKwh * 1800
+} else if (soKwh <= 100) {
+  tien = 50 * 1800 + (soKwh - 50) * 2300
+} else {
+  tien = 50 * 1800 + 50 * 2300 + (soKwh - 100) * 3000
+}
 
+console.log(soKwh + ' kWh = ' + tien + 'đ')   // 335 kWh = 910000đ
+
+// Lỗi hay gặp: tien = soKwh * 3000 — tính TẤT CẢ theo một giá.
+// Bậc thang nghĩa là mỗi phần số điện tính theo giá của bậc đó rồi CỘNG DỒN.
 
 // ------------------------------------------------------------------
-// BÀI 2.2b — Bài toán ngược: từ tiền suy ra số điện
-// Yêu cầu: biết số tiền phải đóng là 910.000đ, tính xem dùng bao nhiêu kWh
-// Tiêu chí: ra đúng 335 kWh; giải thích cách làm trong comment
+// BÀI 2.2b — Bài toán ngược (ĐÁP ÁN)
+// Cách làm: trừ dần từng bậc, phần tiền còn lại chia cho giá của bậc kế tiếp.
 
 const soTien = 910000
+let conLai = soTien
+let kwh = 0
 
-// TODO: viết code của bạn dưới đây
+const tienBac1 = 50 * 1800        // 90.000đ cho 50 kWh đầu
+const tienBac2 = 50 * 2300        // 115.000đ cho 50 kWh tiếp theo
+
+if (conLai <= tienBac1) {
+  kwh = conLai / 1800
+} else if (conLai <= tienBac1 + tienBac2) {
+  conLai = conLai - tienBac1
+  kwh = 50 + conLai / 2300
+} else {
+  conLai = conLai - tienBac1 - tienBac2
+  kwh = 100 + conLai / 3000
+}
+
+console.log(soTien + 'đ = ' + kwh + ' kWh')   // 910000đ = 335 kWh

@@ -1,9 +1,14 @@
-// BÀI 2.1 — Kiểm tra số chẵn và lẻ
-// Yêu cầu:
-//   1. Khai báo một biến số nguyên
-//   2. Dùng if...else để kiểm tra và in ra kết quả
-// Tiêu chí: chạy đúng với số chẵn, số lẻ và số 0; dùng === chứ không phải =
-//
-// Kết quả mong đợi (với so = 7):  đây là số lẻ
+// BÀI 2.1 — Kiểm tra số chẵn và lẻ (ĐÁP ÁN)
 
-// TODO: viết code của bạn dưới đây
+const so = 7
+
+if (so % 2 === 0) {
+  console.log(so + ' là số chẵn')
+} else {
+  console.log(so + ' là số lẻ')
+}
+
+// Trường hợp biên: 0 là số chẵn, số âm vẫn đúng công thức
+for (let i = -2; i <= 2; i++) {
+  console.log(i + (i % 2 === 0 ? ' → chẵn' : ' → lẻ'))
+}

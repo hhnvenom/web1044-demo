@@ -1,7 +1,11 @@
-// BÀI 2.4 — In bảng cửu chương từ 2 đến 9
-// Yêu cầu:
-//   1. Dùng vòng lặp lồng nhau
-//   2. In đầy đủ bảng 2 đến bảng 9, mỗi bảng từ 1 đến 10
-// Tiêu chí: đủ 8 bảng; có dòng tiêu đề phân cách; kết quả phép nhân đúng
+// BÀI 2.4 — In bảng cửu chương từ 2 đến 9 (ĐÁP ÁN)
 
-// TODO: viết code của bạn dưới đây
+for (let bang = 2; bang <= 9; bang++) {
+  console.log('===== Bảng ' + bang + ' =====')
+  for (let i = 1; i <= 10; i++) {
+    console.log(bang + ' x ' + i + ' = ' + bang * i)
+  }
+}
+
+// 8 bảng × 10 dòng = 80 dòng kết quả.
+// Hai biến đếm phải khác tên: dùng i cho cả hai vòng là lỗi rất khó tìm.

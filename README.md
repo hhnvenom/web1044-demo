@@ -1,21 +1,11 @@
-# l2/lab-start — Code khởi tạo Lab 02
+# l2/lab-solution — Đáp án Lab 02 (dành cho giảng viên)
 
-**Slide:** Bài 2 · LAB 02 (demo `l2-lab-start`).
-
-Khung file và đề bài cho 6 bài của Lab 02. Sinh viên làm trực tiếp vào từng file.
+Nối tiếp `l2/lab-start`. Không phát cho sinh viên trước hạn nộp.
 
 ```bash
-git fetch origin && git checkout l2/lab-start
-node bai1.js      # chạy từng bài
+node bai2.js
+git diff l2/lab-start l2/lab-solution
 ```
 
-| File | Bài | Nội dung |
-|---|---|---|
-| `bai1.js` | 2.1 | Kiểm tra số chẵn / lẻ |
-| `bai2.js` | 2.2 + 2.2b | Tiền điện bậc thang và bài toán ngược |
-| `bai3.js` | 2.3 | Lương theo chức vụ và ngày công |
-| `bai4.js` | 2.4 | Bảng cửu chương 2 đến 9 |
-| `bai5.js` | 2.5 | Kiểm tra số nguyên tố |
-| `bai6.js` | 2.6 | Bài mở rộng |
-
-Nộp bài: nén cả thư mục và nộp lên LMS trước hạn.
+Điểm chấm quan trọng: bài 2.2 phải **cộng dồn theo bậc**, không tính tất cả theo một giá;
+bài 2.5 phải đúng với 0, 1, 2 và với hợp số 91.
