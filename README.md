@@ -22,9 +22,15 @@ node index.js                      # lệnh chạy ghi trong README của từng
 
 | Branch | Bài | Nội dung | Chạy |
 |---|---|---|---|
+| `l0/d2-kiem-tra-moi-truong` | 0 | Kiểm tra Node đã cài đúng chưa | `node index.js` |
 | `l1/d1-hello-console` | 1 | File JS đầu tiên: khai báo biến, `console.log` | `node index.js` |
 | `l1/d2-ep-kieu` | 1 | Ép kiểu ngầm định: `+` `-` `*` `==` | `node index.js` |
 | `l1/d3-ep-kieu-tuong-minh` | 1 | Ép kiểu tường minh: `Number()` `String()` `Boolean()` `NaN` | `node index.js` |
+| `l1/d4-cach-chay-js` | 1 | Bốn cách chạy JavaScript (console, script, file ngoài, Node) | `node index.js` |
+| `l1/d5-let-const-var` | 1 | `let`, `const` và `var` rò rỉ ra ngoài khối | `node index.js` |
+| `l1/d6-typeof` | 1 | `typeof`, bẫy `typeof null` và `typeof` mảng | `node index.js` |
+| `l1/d7-gia-tri-falsy` | 1 | Sáu giá trị falsy | `node index.js` |
+| `l1/d8-so-sanh-bang` | 1 | So sánh `==` và `===` | `node index.js` |
 | `l1/end` | 1 | Toàn bộ demo bài 1 (`typeof`, `let/const/var`, falsy, `===`) | `node index.js` |
 | `l1/lab-start` | 1 | Khung 4 bài của Lab 01 | `node index.js` |
 | `l1/lab-solution` | 1 | Đáp án Lab 01 (chỉ giảng viên) | `node index.js` |
@@ -33,6 +39,9 @@ node index.js                      # lệnh chạy ghi trong README của từng
 | `l2/d3-switch-case` | 2 | `switch...case` và bẫy quên `break` | `node index.js` |
 | `l2/d4-vong-lap-long` | 2 | Vòng lặp lồng nhau — bảng cửu chương | `node index.js` |
 | `l2/d5-vong-lap-tung-buoc` | 2 | Chạy từng bước vòng lặp `for` và ba biến thể | `node index.js` |
+| `l2/d6-toan-tu-logic` | 2 | Toán tử logic và toán tử ba ngôi | `node index.js` |
+| `l2/d7-while-do-while` | 2 | `while` và `do...while` | `node index.js` |
+| `l2/d8-break-continue` | 2 | `break` và `continue` | `node index.js` |
 | `l2/end` | 2 | Toàn bộ demo bài 2 (ternary, `while`, `break`/`continue`, tiền điện) | `node index.js` |
 | `l2/lab-start` | 2 | Khung 6 bài của Lab 02 | `node bai1.js` |
 | `l2/lab-solution` | 2 | Đáp án Lab 02 (chỉ giảng viên) | `node bai1.js` |
