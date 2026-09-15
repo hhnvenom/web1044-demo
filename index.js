@@ -25,3 +25,19 @@
   // Chương trình KHÔNG báo lỗi. Ba mảng phải luôn đồng bộ,
   // nhưng không có gì bắt buộc điều đó.
 }
+
+// ------------------------------------------------------
+//  Demo 2 — Function constructor  (slide "Tạo đối tượng bằng hàm tạo")
+// ------------------------------------------------------
+{
+  function Person(n, a) {
+    this.name = n
+    this.age = a
+  }
+
+  const p = new Person('Nam', 30)
+  console.log(p.name, p.age)
+  console.log(p)
+
+  // Thử bỏ new rồi chạy lại: this trỏ vào global, p là undefined.
+}
