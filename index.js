@@ -73,3 +73,53 @@ console.log(tinhLuong('giam-doc', 24))   // 0 — chức vụ không có trong b
 
 // Thêm chức vụ mới chỉ sửa layHeSo, tinhLuong không đụng tới.
 // Trong switch dùng return thay break: thoát hàm luôn, gọn hơn.
+
+// ======================================================
+//  Phần còn lại của bài 3
+// ======================================================
+
+console.log('--- Tham số, đối số và giá trị mặc định ---')
+function chao(ten, loiChao = 'Xin chào') {
+  return loiChao + ', ' + ten
+}
+console.log(chao('An'))               // Xin chào, An
+console.log(chao('Bình', 'Chào bạn')) // Chào bạn, Bình
+console.log(chao())                   // Xin chào, undefined ← lỗi im lặng
+
+console.log('--- return so với console.log ---')
+function tongChiIn(a, b) {
+  console.log(a + b)                  // chỉ in, không trả về
+}
+function tongTraVe(a, b) {
+  return a + b
+}
+const x = tongChiIn(2, 3)
+console.log(x)                        // undefined — không dùng lại được
+const y = tongTraVe(2, 3)
+console.log(y * 2)                    // 10 — dùng tiếp được
+
+// return kết thúc hàm ngay, code sau nó không chạy
+function thuReturn() {
+  return 'xong'
+  console.log('dòng này không bao giờ chạy')
+}
+console.log(thuReturn())
+
+console.log('--- Phạm vi biến ---')
+const tenChung = 'ai cũng thấy'
+function thuNghiem() {
+  const tenRieng = 'chỉ trong hàm thấy'
+  console.log(tenChung)
+  console.log(tenRieng)
+}
+thuNghiem()
+console.log(tenChung)
+// console.log(tenRieng)   // bỏ comment: ReferenceError
+
+console.log('--- Hàm gọi hàm: call stack ---')
+function A() { B() }
+function B() { C() }
+function C() { console.log('xong') }
+A()
+// Gọi A → đẩy A, A gọi B → đẩy B, B gọi C → đẩy C.
+// C xong gỡ C, quay về B, gỡ B, quay về A, gỡ A. Stack rỗng.
