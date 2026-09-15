@@ -39,3 +39,27 @@ console.log(sv)
 
 // Object dùng khi mỗi phần tử có NHIỀU thuộc tính khác loại nhau.
 // Mảng dùng khi nhiều phần tử CÙNG loại.
+
+// ======================================================
+//  Demo 3 — map, filter, reduce
+// ======================================================
+const products = [
+  { name: 'Cà phê Arabica', price: 120000 },
+  { name: 'Cà phê Robusta', price: 90000 },
+  { name: 'Cà phê xanh', price: 180000 }
+]
+
+// map — biến đổi từng phần tử, trả về mảng MỚI cùng độ dài
+const tenSP = products.map(p => p.name)
+console.log(tenSP)
+
+// filter — giữ lại phần tử thoả điều kiện, mảng mới NGẮN hơn hoặc bằng
+const dat = products.filter(p => p.price > 100000)
+console.log(dat)
+
+// reduce — gộp cả mảng thành MỘT giá trị
+const tongTien = products.reduce((tong, p) => tong + p.price, 0)
+console.log('Tổng:', tongTien)
+
+// Cả ba đều KHÔNG sửa mảng gốc
+console.log('mảng gốc vẫn còn', products.length, 'phần tử')
