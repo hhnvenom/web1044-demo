@@ -167,3 +167,26 @@ console.log(ketQua)
 
 // Chỉ dùng ba ngôi cho trường hợp đơn giản.
 // Lồng ba ngôi vào nhau thì không ai đọc nổi.
+
+// ======================================================
+//  Demo 7 — while và do...while
+// ======================================================
+
+// while — kiểm tra TRƯỚC, có thể không chạy lần nào
+let i = 1
+while (i <= 3) {
+  console.log('while:', i)
+  i++
+}
+
+// do...while — chạy TRƯỚC, kiểm tra SAU, luôn chạy ít nhất một lần
+let j = 10
+do {
+  console.log('do-while:', j)   // vẫn in một dòng dù 10 > 3
+  j++
+} while (j <= 3)
+
+// Dùng cái nào:
+//   biết trước số vòng lặp            → for
+//   không biết trước, lặp tới khi đủ  → while
+//   do...while ít dùng, chủ yếu cho menu hoặc nhập liệu
