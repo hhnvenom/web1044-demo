@@ -99,3 +99,53 @@ for (let bang = 2; bang <= 4; bang++) {
 
 // Vòng ngoài 3 lần × vòng trong 10 lần = 30 dòng.
 // Tên biến đếm hai vòng phải khác nhau, dùng i cho cả hai là lỗi rất khó tìm.
+
+// ======================================================
+//  Phần còn lại của bài 2
+// ======================================================
+
+console.log('--- Toán tử ba ngôi và toán tử logic ---')
+const tuoi = 20
+console.log(tuoi >= 18 ? 'Đủ tuổi' : 'Chưa đủ tuổi')
+console.log(tuoi >= 18 && tuoi < 60 ? 'Trong độ tuổi lao động' : 'Ngoài độ tuổi')
+console.log(tuoi < 6 || tuoi > 60 ? 'Được miễn phí vé' : 'Mua vé thường')
+
+console.log('--- while: chưa biết trước số vòng ---')
+let tien = 100000
+let ngay = 0
+while (tien >= 15000) {
+  tien = tien - 15000
+  ngay++
+}
+console.log('Ăn được ' + ngay + ' ngày, còn thừa ' + tien + 'đ')
+
+console.log('--- do...while: luôn chạy ít nhất một lần ---')
+let lan = 0
+do {
+  console.log('chạy lần thứ ' + (lan + 1))
+  lan++
+} while (lan < 2)
+
+console.log('--- break: thoát hẳn khỏi vòng lặp → in ra 1 2 3 ---')
+for (let i = 1; i <= 10; i++) {
+  if (i === 4) break
+  console.log(i)
+}
+
+console.log('--- continue: bỏ qua vòng này → in ra 1 3 5 ---')
+for (let i = 1; i <= 6; i++) {
+  if (i % 2 === 0) continue
+  console.log(i)
+}
+
+console.log('--- Tính tiền điện bậc thang (dùng lại ở bài 3) ---')
+const soKwh = 335
+let tienDien = 0
+if (soKwh <= 50) {
+  tienDien = soKwh * 1800
+} else if (soKwh <= 100) {
+  tienDien = 50 * 1800 + (soKwh - 50) * 2300
+} else {
+  tienDien = 50 * 1800 + 50 * 2300 + (soKwh - 100) * 3000
+}
+console.log(soKwh + ' kWh = ' + tienDien + 'đ')
