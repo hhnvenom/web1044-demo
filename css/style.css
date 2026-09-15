@@ -1,0 +1,145 @@
+/* ===== Biến màu: light mặc định, dark khi body có class "dark" ===== */
+:root {
+  --bg: #fffdfb;
+  --surface: #ffffff;
+  --text: #1b2437;
+  --muted: #6b7386;
+  --line: #e6e8ee;
+  --primary: #f37021;
+  --primary-dark: #e05a0c;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --shadow: 0 6px 18px rgba(27, 36, 55, 0.08);
+}
+body.dark {
+  --bg: #15141c;
+  --surface: #1f1d2b;
+  --text: #ece9f5;
+  --muted: #a3a0b8;
+  --line: #33304a;
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.2s, color 0.2s;
+}
+h1, h2 { margin: 0 0 0.5rem; }
+.muted { color: var(--muted); }
+.container { max-width: 1080px; margin: 0 auto; padding: 0 1.25rem 3rem; }
+
+/* ===== Nút ===== */
+.btn {
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  padding: 0.5rem 0.9rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.btn:hover { border-color: var(--primary); }
+.btn-primary { background: var(--primary); border-color: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-ghost { background: transparent; }
+.btn-sm { padding: 0.25rem 0.55rem; border-radius: 8px; }
+.badge {
+  background: #fff; color: var(--primary);
+  border-radius: 999px; padding: 0 0.45rem; font-size: 0.75rem; font-weight: 800;
+}
+
+/* ===== Header / hero ===== */
+.header {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; gap: 1.5rem;
+  padding: 0.8rem 1.25rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+.logo { font-weight: 800; font-size: 1.15rem; color: var(--text); text-decoration: none; }
+.nav { display: flex; gap: 1rem; flex: 1; }
+.nav a { color: var(--muted); text-decoration: none; font-weight: 600; }
+.nav a:hover { color: var(--primary); }
+.header-actions { display: flex; gap: 0.5rem; }
+.hero {
+  text-align: center; padding: 3.5rem 1.25rem;
+  background: linear-gradient(135deg, #f26b1d, #ff9a4d);
+  color: #fff;
+}
+.hero h1 { font-size: 2.4rem; }
+.hero p { opacity: 0.92; margin-bottom: 1.2rem; }
+.hero .btn-primary { background: #fff; color: var(--primary); border-color: #fff; }
+
+/* ===== Sản phẩm ===== */
+.section-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; margin: 2rem 0 1rem; }
+.filters { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.filters .btn.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+.card {
+  background: var(--surface); border: 1.5px solid var(--line); border-radius: 14px;
+  padding: 1rem; box-shadow: var(--shadow);
+  display: flex; flex-direction: column; gap: 0.4rem;
+  transition: transform 0.15s;
+}
+.card:hover { transform: translateY(-3px); }
+.card .emoji { font-size: 3rem; text-align: center; padding: 0.5rem 0; }
+.card .tag { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); font-weight: 800; }
+.card h3 { margin: 0; font-size: 1.05rem; }
+.card .desc { color: var(--muted); font-size: 0.85rem; flex: 1; }
+.card .row { display: flex; align-items: center; justify-content: space-between; margin-top: 0.4rem; }
+.card .price { font-weight: 800; }
+.card.hot::after { content: '🔥 Hot'; position: absolute; }
+.card { position: relative; }
+.card .ribbon { position: absolute; top: 0.7rem; right: 0.7rem; font-size: 0.7rem; background: var(--danger); color: #fff; border-radius: 999px; padding: 0.1rem 0.5rem; font-weight: 700; }
+
+/* ===== Giỏ hàng ===== */
+.cart {
+  position: fixed; top: 0; right: 0; height: 100%; width: min(380px, 100%);
+  background: var(--surface); border-left: 1px solid var(--line);
+  transform: translateX(100%); transition: transform 0.25s; z-index: 30;
+  display: flex; flex-direction: column;
+}
+.cart.open { transform: none; }
+.cart-head { display: flex; align-items: center; justify-content: space-between; padding: 1rem; border-bottom: 1px solid var(--line); }
+.cart-items { flex: 1; overflow: auto; padding: 0.5rem 1rem; }
+.cart-item { display: grid; grid-template-columns: 2rem 1fr auto; gap: 0.6rem; align-items: center; padding: 0.6rem 0; border-bottom: 1px dashed var(--line); }
+.cart-item .name { font-weight: 600; }
+.cart-item .sub { color: var(--muted); font-size: 0.8rem; }
+.qty { display: inline-flex; align-items: center; gap: 0.3rem; }
+.qty span { min-width: 1.4rem; text-align: center; font-weight: 700; }
+.cart-foot { padding: 1rem; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.cart-foot .total { flex: 1 0 100%; font-size: 1.05rem; margin-bottom: 0.3rem; }
+.empty { color: var(--muted); text-align: center; padding: 2rem 0; }
+.overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.35); opacity: 0; pointer-events: none; transition: opacity 0.25s; z-index: 20; }
+.overlay.show { opacity: 1; pointer-events: auto; }
+
+/* ===== Form ===== */
+.register { margin-top: 3rem; max-width: 480px; }
+.field { display: flex; flex-direction: column; gap: 0.25rem; margin-bottom: 0.9rem; }
+.field label { font-weight: 600; font-size: 0.9rem; }
+.field input {
+  padding: 0.55rem 0.75rem; border-radius: 10px; border: 1.5px solid var(--line);
+  background: var(--surface); color: var(--text); font: inherit;
+}
+.field input:focus { outline: none; border-color: var(--primary); }
+.field input.invalid { border-color: var(--danger); }
+.error { color: var(--danger); font-size: 0.8rem; min-height: 1em; }
+.message { margin-top: 0.8rem; font-weight: 600; }
+.message.ok { color: var(--success); }
+
+.footer { text-align: center; color: var(--muted); padding: 2rem; border-top: 1px solid var(--line); font-size: 0.85rem; }
+
+@media (max-width: 640px) {
+  .nav { display: none; }
+  .hero h1 { font-size: 1.7rem; }
+}
