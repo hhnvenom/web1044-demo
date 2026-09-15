@@ -100,3 +100,7 @@ body.dark input {
   color: #fff;
   border-color: #444;
 }
+
+/* ---- Form đăng ký (LAB 8.4) ---- */
+.loi { color: #dc2626; font-size: 0.85rem; }
+#ketQuaDangKy { color: #16a34a; font-weight: 600; }

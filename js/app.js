@@ -1,6 +1,6 @@
 // ==========================================================
-//  Bài 8 · Demo 5 — Notification khi thanh toán
-//  Slide: "Notification API"
+//  Bài 8 · Demo 6 — Validate form bằng validator.js
+//  Slide: "validator.js"
 //  Chạy: npx serve .   rồi mở http://localhost:3000
 // ==========================================================
 
@@ -166,6 +166,49 @@ document.getElementById('checkoutBtn').addEventListener('click', async () => {
   // Thanh toán xong thì giỏ phải rỗng, cả trong localStorage
   cart = []
   renderCart()
+})
+
+// ---------- Demo 6 — Validate form bằng validator.js ----------
+function datLoi(id, thongDiep) {
+  document.getElementById(id).textContent = thongDiep
+}
+
+document.getElementById('registerForm').addEventListener('submit', (e) => {
+  e.preventDefault()   // chặn form tự gửi đi
+
+  if (typeof validator === 'undefined') {
+    datLoi('ketQuaDangKy', 'Chưa tải được thư viện validator — kiểm tra mạng')
+    return
+  }
+
+  const email = document.getElementById('email').value
+  const matKhau = document.getElementById('matKhau').value
+  const dienThoai = document.getElementById('dienThoai').value
+
+  const loi = []
+
+  if (!validator.isEmail(email)) {
+    loi.push(['loiEmail', 'Email không hợp lệ'])
+  }
+  if (matKhau.length < 6) {
+    loi.push(['loiMatKhau', 'Mật khẩu phải từ 6 ký tự'])
+  }
+  if (!/^0\d{9}$/.test(dienThoai)) {
+    loi.push(['loiDienThoai', 'Số điện thoại gồm 10 số, bắt đầu bằng 0'])
+  }
+
+  // Xoá lỗi cũ rồi hiện lỗi mới một lượt
+  datLoi('loiEmail', '')
+  datLoi('loiMatKhau', '')
+  datLoi('loiDienThoai', '')
+  loi.forEach(([id, thongDiep]) => datLoi(id, thongDiep))
+
+  if (loi.length > 0) {
+    datLoi('ketQuaDangKy', '')
+  } else {
+    datLoi('ketQuaDangKy', 'Đăng ký thành công!')
+    e.target.reset()
+  }
 })
 
 renderProducts()

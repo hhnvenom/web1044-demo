@@ -1,17 +1,15 @@
-# l8/d5-notification — Notification khi thanh toán
+# l8/d6-validator — Validate form bằng validator.js
 
-**Slide:** Bài 8 · "Notification API" (demo `l8-d5`).
+**Slide:** Bài 8 · "validator.js" (demo `l8-d6`).
 
-Ba trạng thái quyền: `default` chưa hỏi · `granted` đã cho phép · `denied` đã từ chối.
-Từ chối rồi thì **không hỏi lại được**, nên nhánh `else` hiện thông báo ngay trong trang.
+Thẻ script của thư viện phải đặt **trước** `js/app.js`, nếu không sẽ gặp
+`Uncaught ReferenceError: validator is not defined`.
 
-Chỉ xin quyền **khi người dùng bấm nút**, đừng xin lúc tải trang.
-Thanh toán xong thì giỏ rỗng, cả trong `localStorage`.
+Code có kiểm tra `typeof validator === 'undefined'` để trang không vỡ khi mất mạng.
+Validate phía client chỉ để **trải nghiệm** — an toàn thật phải validate ở server.
 
 ```bash
 npx serve .
 # rồi mở http://localhost:3000
-git diff l8/d4-cart-persist l8/d5-notification
+git diff l8/d5-notification l8/d6-validator
 ```
-
-Branch tiếp theo: `l8/d6-validator`.
