@@ -1,20 +1,17 @@
-# l7/end — Bài 7 hoàn chỉnh
+# l8/d1-local-storage — Ba thao tác với localStorage
 
-**Slide:** Bài 7 · "Tóm tắt bài 7" (demo `l7-end`).
+**Slide:** Bài 8 · "setItem · getItem · removeItem" (demo `l8-d1`).
 
-Trang bán hàng chạy được: danh sách sản phẩm render từ mảng, giỏ hàng **thêm · tăng ·
-giảm · xoá**, tổng tiền luôn khớp.
+Gõ tên, bấm Lưu, rồi **tải lại trang** — giá trị vẫn còn.
+`getItem` trả về `null` nếu chưa có khoá, nên phải có phương án dự phòng:
+`localStorage.getItem('ten') || '(chưa có)'`.
 
-Ba tình huống dễ quên đều đã xử lý: giảm về 0 thì xoá · giỏ trống có thông báo ·
-thêm trùng thì cộng dồn.
-
-Các slide demo trung gian (nút đếm, danh sách delegation, nút Hiện/Ẩn) đã gỡ bỏ —
-đây là trang thành phẩm, không còn khung dạy học.
-
-Nhấn F5 thì mất sạch giỏ hàng. Đó là bài toán của bài 8.
+Giỏ hàng ở branch này **chưa lưu được** — F5 là mất. Branch `l8/d4-cart-persist` sẽ sửa.
 
 ```bash
 npx serve .
 # rồi mở http://localhost:3000
-git diff l7/d4-cart-events l7/end
+git diff l7/end l8/d1-local-storage
 ```
+
+Branch tiếp theo: `l8/d3-dark-mode`.
