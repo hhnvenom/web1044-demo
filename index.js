@@ -85,3 +85,17 @@ switch (ma) {
   default:
     console.log('không khớp — vì 1 (số) khác "1" (chuỗi)')
 }
+
+// ======================================================
+//  Demo 4 — Vòng lặp lồng nhau: bảng cửu chương
+// ======================================================
+// Demo chạy từ 2 đến 4 cho gọn màn hình; lab mới làm đủ 2 đến 9.
+for (let bang = 2; bang <= 4; bang++) {
+  console.log('--- Bảng ' + bang + ' ---')
+  for (let i = 1; i <= 10; i++) {
+    console.log(bang + ' x ' + i + ' = ' + bang * i)
+  }
+}
+
+// Vòng ngoài 3 lần × vòng trong 10 lần = 30 dòng.
+// Tên biến đếm hai vòng phải khác nhau, dùng i cho cả hai là lỗi rất khó tìm.

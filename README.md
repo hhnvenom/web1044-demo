@@ -1,13 +1,12 @@
-# l2/d3-switch-case — switch...case và bẫy quên break
+# l2/d4-vong-lap-long — Vòng lặp lồng nhau
 
-**Slide:** Bài 2 · "switch case" (demo `l2-d4`).
+**Slide:** Bài 2 · "Vòng lặp lồng" (demo `l2-d8`).
 
-Tra hệ số lương theo chức vụ. Trong file có đánh dấu dòng `break` để xoá thử và
-nhìn thấy fall-through, cùng ví dụ `switch` so sánh bằng `===`.
+Bảng cửu chương cần hai vòng lặp: một cho bảng, một cho từng dòng.
 
 ```bash
 node index.js
-git diff l2/d2-if-else-nested l2/d3-switch-case
+git diff l2/d3-switch-case l2/d4-vong-lap-long
 ```
 
-Branch tiếp theo: `l2/d4-vong-lap-long`.
+Branch tiếp theo: `l2/end`.
