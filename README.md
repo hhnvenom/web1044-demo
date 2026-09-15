@@ -1,18 +1,20 @@
-# l7/d4-cart-events — Giỏ hàng chạy được
+# l7/end — Bài 7 hoàn chỉnh
 
-**Slide:** Bài 7 · "Giỏ hàng chạy được" (demo `l7-d4`).
+**Slide:** Bài 7 · "Tóm tắt bài 7" (demo `l7-end`).
 
-Vòng đời ba bước: **thao tác → sửa dữ liệu → render lại**.
+Trang bán hàng chạy được: danh sách sản phẩm render từ mảng, giỏ hàng **thêm · tăng ·
+giảm · xoá**, tổng tiền luôn khớp.
 
-`find` để cộng dồn sản phẩm trùng · `reduce` để tính tổng · `map` để render.
-Bài 7 không dạy gì mới về mảng, chỉ ghép lại.
+Ba tình huống dễ quên đều đã xử lý: giảm về 0 thì xoá · giỏ trống có thông báo ·
+thêm trùng thì cộng dồn.
 
-Bấm thêm cùng một sản phẩm hai lần để thấy nó cộng dồn chứ không tạo dòng mới.
+Các slide demo trung gian (nút đếm, danh sách delegation, nút Hiện/Ẩn) đã gỡ bỏ —
+đây là trang thành phẩm, không còn khung dạy học.
+
+Nhấn F5 thì mất sạch giỏ hàng. Đó là bài toán của bài 8.
 
 ```bash
 npx serve .
 # rồi mở http://localhost:3000
-git diff l7/d3-hieu-ung-an-hien l7/d4-cart-events
+git diff l7/d4-cart-events l7/end
 ```
-
-Branch tiếp theo: `l7/end`.
