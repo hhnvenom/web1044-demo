@@ -161,8 +161,8 @@ if (!coVe) {
 }
 
 // Toán tử ba ngôi: một dòng, tương đương cả khối if...else
-const diemSo = 7.5
-const ketQua = diemSo >= 5 ? 'Đậu' : 'Rớt'
+// (biến diem đã khai báo ở Demo 2 phía trên, dùng lại luôn)
+const ketQua = diem >= 5 ? 'Đậu' : 'Rớt'
 console.log(ketQua)
 
 // Chỉ dùng ba ngôi cho trường hợp đơn giản.
