@@ -1,12 +1,4 @@
-// BÀI 4.3 — Danh sách sinh viên
-// Cho mảng 10 sinh viên { name, score }. Làm đủ 5 yêu cầu:
-//   a) Lọc ra sinh viên có điểm > 8
-//   b) Tìm sinh viên tên 'Chi'
-//   c) Tạo mảng chỉ gồm tên sinh viên
-//   d) Tính điểm trung bình cả lớp
-//   e) Sắp xếp theo điểm giảm dần
-// Tiêu chí: mỗi yêu cầu dùng đúng phương thức; KHÔNG dùng for thủ công cho a, c, d, e.
-
+// BÀI 4.3 — Danh sách sinh viên (ĐÁP ÁN)
 const students = [
   { name: 'An', score: 8.2 },
   { name: 'Bình', score: 7.5 },
@@ -20,4 +12,20 @@ const students = [
   { name: 'Ngọc', score: 6.7 }
 ]
 
-// TODO: viết code của bạn dưới đây
+// a) lọc điểm > 8
+const gioi = students.filter(s => s.score > 8)
+console.log('a)', gioi.map(s => s.name))
+
+// b) tìm sinh viên tên Chi
+console.log('b)', students.find(s => s.name === 'Chi'))
+
+// c) mảng chỉ gồm tên
+console.log('c)', students.map(s => s.name))
+
+// d) điểm trung bình
+const tong = students.reduce((t, s) => t + s.score, 0)
+console.log('d)', (tong / students.length).toFixed(2))
+
+// e) sắp xếp giảm dần (dùng bản sao để giữ mảng gốc)
+const theoDiem = [...students].sort((a, b) => b.score - a.score)
+console.log('e)', theoDiem.map(s => s.name + ' ' + s.score))

@@ -1,9 +1,4 @@
-// BÀI 4.4 — Sắp xếp products theo giá
-// a) Sắp xếp mảng products theo giá TĂNG DẦN
-// b) In mảng đã sắp xếp
-// Tiêu chí: dùng comparator trong sort.
-// Kết quả đúng thứ tự: Mouse, Keyboard, Monitor, Laptop
-
+// BÀI 4.4 — Sắp xếp products theo giá (ĐÁP ÁN)
 const products = [
   { name: 'Laptop', price: 1200 },
   { name: 'Mouse', price: 30 },
@@ -11,4 +6,8 @@ const products = [
   { name: 'Monitor', price: 300 }
 ]
 
-// TODO: viết code của bạn dưới đây
+products.sort((a, b) => a.price - b.price)
+products.forEach(p => console.log(p.name, p.price))
+// Mouse 30 · Keyboard 75 · Monitor 300 · Laptop 1200
+
+// Không có comparator thì sort đổi thành chuỗi: 1200 đứng trước 30 vì '1' < '3'.

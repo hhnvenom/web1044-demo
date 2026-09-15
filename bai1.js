@@ -1,13 +1,12 @@
-// BÀI 4.1 — Thao tác với shoppingList
-// Cho: const shoppingList = ['Trứng', 'Thịt', 'Rau']
-// Làm đủ 5 yêu cầu THEO ĐÚNG THỨ TỰ (câu e phụ thuộc kết quả a–d):
-//   a) Thêm 'Sữa' vào cuối mảng
-//   b) Thêm 'Bánh mì' vào đầu mảng
-//   c) Xoá phần tử cuối
-//   d) Xoá phần tử đầu và IN RA tên món vừa xoá
-//   e) In ra phần tử cuối cùng của mảng sau khi đã thay đổi
-// Gợi ý: pop và shift TRẢ VỀ phần tử vừa xoá.
-
+// BÀI 4.1 — Thao tác với shoppingList (ĐÁP ÁN)
 const shoppingList = ['Trứng', 'Thịt', 'Rau']
 
-// TODO: viết code của bạn dưới đây
+shoppingList.push('Sữa')                    // a
+shoppingList.unshift('Bánh mì')             // b
+shoppingList.pop()                          // c — xoá cuối
+const daXoa = shoppingList.shift()          // d — xoá đầu, GIỮ lại giá trị
+console.log('Món vừa xoá:', daXoa)          // Bánh mì
+console.log('Phần tử cuối:', shoppingList[shoppingList.length - 1])  // Rau
+console.log(shoppingList)                   // [ 'Trứng', 'Thịt', 'Rau' ]
+
+// Câu d là chỗ hay sai: shift() TRẢ VỀ phần tử vừa xoá, phải hứng vào biến.
