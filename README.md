@@ -1,18 +1,14 @@
-# l3/d3-cac-cach-khai-bao — Ba cách khai báo hàm
+# l3/d8-ham-goi-ham — Hàm gọi hàm
 
-**Slide:** Bài 3 · "Ba cách khai báo hàm" (demo `l3-d3`).
+**Slide:** Bài 3 · "Hàm gọi hàm trong thực tế" (demo `l3-d8`).
 
-Declaration, expression và arrow function viết cùng một phép tính.
+Bài toán lương của LAB 2.3 tách làm hai hàm: `layHeSo` tra hệ số, `tinhLuong` gọi lại nó.
 
 ```bash
 node index.js
-git diff l3/d2-tach-ham l3/d3-cac-cach-khai-bao
+git diff l3/d3-cac-cach-khai-bao l3/d8-ham-goi-ham
 ```
 
-| Cách viết | Gọi trước khi khai báo | Dùng khi nào |
-|---|---|---|
-| Declaration | Được | Hàm chính của file |
-| Expression | Không | Ít dùng ở môn này |
-| Arrow | Không | Callback, học kỹ ở bài 4 |
+So sánh với bản một khối ở `l2/end`: thêm chức vụ mới giờ chỉ sửa `layHeSo`.
 
-Branch tiếp theo: `l3/d8-ham-goi-ham`.
+Branch tiếp theo: `l3/end`.

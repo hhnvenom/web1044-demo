@@ -47,3 +47,29 @@ console.log(cong(5, 3), tru(5, 3), nhan(5, 3))   // 8 2 15
 
 // Ở môn này dùng declaration là chính.
 // Arrow sẽ gặp lại nhiều ở bài 4 khi dùng map/filter.
+
+// ======================================================
+//  Demo 3 — Hàm gọi hàm: mỗi hàm làm đúng một việc
+// ======================================================
+
+function layHeSo(chucVu) {
+  switch (chucVu) {
+    case 'intern':  return 1.0
+    case 'staff':   return 1.5
+    case 'senior':  return 2.0
+    case 'manager': return 3.0
+    default:        return 0      // chức vụ không hợp lệ
+  }
+}
+
+function tinhLuong(chucVu, ngayCong) {
+  const heSo = layHeSo(chucVu)    // hàm này gọi hàm kia
+  return heSo * ngayCong * 5000000 / 24
+}
+
+console.log(tinhLuong('senior', 22))     // 9166666.666...
+console.log(tinhLuong('intern', 24))     // 5000000
+console.log(tinhLuong('giam-doc', 24))   // 0 — chức vụ không có trong bảng
+
+// Thêm chức vụ mới chỉ sửa layHeSo, tinhLuong không đụng tới.
+// Trong switch dùng return thay break: thoát hàm luôn, gọn hơn.
