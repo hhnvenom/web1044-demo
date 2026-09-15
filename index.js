@@ -190,3 +190,28 @@ do {
 //   biết trước số vòng lặp            → for
 //   không biết trước, lặp tới khi đủ  → while
 //   do...while ít dùng, chủ yếu cho menu hoặc nhập liệu
+
+// ======================================================
+//  Demo 8 — break và continue
+// ======================================================
+
+// break — thoát hẳn khỏi vòng lặp → in ra 1 2 3
+for (let i = 1; i <= 10; i++) {
+  if (i === 4) break
+  console.log(i)
+}
+
+// continue — bỏ qua vòng này, chạy tiếp vòng sau → in ra 1 3 5
+for (let i = 1; i <= 6; i++) {
+  if (i % 2 === 0) continue
+  console.log(i)
+}
+
+// break dùng để dừng sớm khi đã tìm được thứ cần tìm.
+// Trong vòng lặp lồng nhau, break chỉ thoát vòng lặp GẦN NHẤT, không thoát hết:
+for (let ngoai = 1; ngoai <= 2; ngoai++) {
+  for (let trong = 1; trong <= 5; trong++) {
+    if (trong === 2) break        // chỉ thoát vòng trong
+    console.log('ngoài', ngoai, '· trong', trong)
+  }
+}
