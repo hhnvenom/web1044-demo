@@ -1,15 +1,10 @@
-// BÀI 3.1 — Viết hàm kiểm tra số chẵn
-// Yêu cầu:
-//   1. Viết hàm isEven(n) trả về true hoặc false
-//   2. Gọi thử với vài giá trị khác nhau
-// Tiêu chí: hàm TRẢ VỀ boolean chứ không in ra màn hình; đúng với 0 và số âm
-//
-// Kết quả mong đợi:
-//   isEven(4)  → true      isEven(7)  → false
-//   isEven(0)  → true      isEven(-3) → false
+// BÀI 3.1 — Viết hàm kiểm tra số chẵn (ĐÁP ÁN)
 
-// TODO: viết hàm của bạn dưới đây
+function isEven(n) {
+  return n % 2 === 0        // TRẢ VỀ boolean, không console.log bên trong
+}
 
-
-// Bỏ comment để tự kiểm tra:
-// console.log(isEven(4), isEven(7), isEven(0), isEven(-3))
+console.log(isEven(4))      // true
+console.log(isEven(7))      // false
+console.log(isEven(0))      // true   — 0 là số chẵn
+console.log(isEven(-3))     // false  — số âm vẫn đúng công thức

@@ -1,22 +1,12 @@
-# l3/lab-start — Code khởi tạo Lab 03
+# l3/lab-solution — Đáp án Lab 03 (dành cho giảng viên)
 
-**Slide:** Bài 3 · LAB 03 (demo `l3-lab-start`).
-
-Khung file và đề bài cho 6 bài của Lab 03. `bai4.js` có sẵn **bộ test** để sinh viên tự chấm.
+Nối tiếp `l3/lab-start`. Không phát cho sinh viên trước hạn nộp.
 
 ```bash
-git fetch origin && git checkout l3/lab-start
-node bai1.js      # chạy từng bài
-node bai4.js      # chạy bộ test của bài 3.4
+node bai4.js      # bộ test bài 3.4 — cả 5 ca phải ra ĐẠT
+git diff l3/lab-start l3/lab-solution
 ```
 
-| File | Bài | Nội dung |
-|---|---|---|
-| `bai1.js` | 3.1 | Hàm `isEven(n)` |
-| `bai2.js` | 3.2 | Hàm `tinhTienDien(soKwh)` |
-| `bai3.js` | 3.3 | Hàm tính lương, tách hai hàm |
-| `bai4.js` | 3.4 | Hàm `chuanHoaCau(chuoi)` + bộ test |
-| `bai5.js` | 3.5 | Hàm `calculator(a, b, phepTinh)` |
-| `bai6.js` | 3.6 | Bài mở rộng |
-
-Nộp bài: mỗi bài một file riêng, nén cả thư mục rồi nộp lên LMS trước hạn.
+Điểm chấm quan trọng: mọi hàm phải `return` chứ không `console.log`;
+bài 3.2 ra đúng 910.000đ với 335 kWh; bài 3.4 chạy đúng với chuỗi rỗng;
+bài 3.5 chặn chia cho 0 trước khi chia.

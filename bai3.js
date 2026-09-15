@@ -1,15 +1,27 @@
-// BÀI 3.3 — Viết hàm tính lương theo chức vụ và ngày công
-// Yêu cầu: viết hàm nhận chức vụ và ngày công, trả về lương
-// Tiêu chí: tách thành HAI hàm (một hàm tra hệ số, một hàm tính lương);
-//           có xử lý chức vụ không hợp lệ
-//
-// Hệ số:  intern 1.0 · staff 1.5 · senior 2.0 · manager 3.0
-// Lương cơ bản 5.000.000đ · ngày công quy định 24
-// Công thức: lương = hệ số × ngày công × 5.000.000 / 24
+// BÀI 3.3 — Viết hàm tính lương (ĐÁP ÁN)
+// Hai hàm: layHeSo tra bảng, tinhLuong dùng lại nó.
 
-// TODO: viết hai hàm của bạn dưới đây
+const LUONG_CO_BAN = 5000000
+const NGAY_CONG_QUY_DINH = 24
 
+function layHeSo(chucVu) {
+  switch (chucVu) {
+    case 'intern':  return 1.0
+    case 'staff':   return 1.5
+    case 'senior':  return 2.0
+    case 'manager': return 3.0
+    default:        return 0      // chức vụ không hợp lệ
+  }
+}
 
-// Bỏ comment để tự kiểm tra:
-// console.log(tinhLuong('senior', 22))     // 9166666.666...
-// console.log(tinhLuong('giam-doc', 24))   // xử lý chức vụ không hợp lệ
+function tinhLuong(chucVu, ngayCong) {
+  const heSo = layHeSo(chucVu)
+  if (heSo === 0) return 'Chức vụ không hợp lệ: ' + chucVu
+  return heSo * ngayCong * LUONG_CO_BAN / NGAY_CONG_QUY_DINH
+}
+
+console.log(tinhLuong('senior', 22))     // 9166666.666...
+console.log(tinhLuong('intern', 24))     // 5000000
+console.log(tinhLuong('giam-doc', 24))   // Chức vụ không hợp lệ
+
+// Thêm chức vụ mới chỉ sửa layHeSo, tinhLuong không đụng tới.

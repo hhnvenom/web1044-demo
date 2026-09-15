@@ -1,19 +1,25 @@
-// BÀI 3.5 — Viết hàm calculator
-// Yêu cầu: hàm nhận hai số và một phép tính, trả về kết quả; hỗ trợ + - * /
-// Tiêu chí: xử lý chia cho 0; xử lý phép tính không hợp lệ; TRẢ VỀ chứ không in
-//
-// Ví dụ:
-//   calculator(15.5, 2, '*')  → 31
-//   calculator(10, 0, '/')    → thông báo lỗi
-//   calculator(5, 3, '%')     → phép tính không hỗ trợ
-//
-// Lưu ý: 10 / 0 trong JavaScript ra Infinity chứ KHÔNG báo lỗi.
-// Phải tự chặn trước khi chia.
+// BÀI 3.5 — Viết hàm calculator (ĐÁP ÁN)
 
-// TODO: viết hàm của bạn dưới đây
+function calculator(a, b, phepTinh) {
+  switch (phepTinh) {
+    case '+':
+      return a + b
+    case '-':
+      return a - b
+    case '*':
+      return a * b
+    case '/':
+      if (b === 0) return 'Lỗi: không chia được cho 0'   // chặn TRƯỚC khi chia
+      return a / b
+    default:
+      return 'Phép tính không hỗ trợ: ' + phepTinh
+  }
+}
 
+console.log(calculator(15.5, 2, '*'))   // 31
+console.log(calculator(10, 3, '+'))     // 13
+console.log(calculator(10, 0, '/'))     // Lỗi: không chia được cho 0
+console.log(calculator(5, 3, '%'))      // Phép tính không hỗ trợ: %
 
-// Bỏ comment để tự kiểm tra:
-// console.log(calculator(15.5, 2, '*'))
-// console.log(calculator(10, 0, '/'))
-// console.log(calculator(5, 3, '%'))
+// Nếu không chặn, 10 / 0 ra Infinity và chương trình chạy tiếp với số vô nghĩa.
+console.log(10 / 0, 0 / 0, typeof (10 / 0))

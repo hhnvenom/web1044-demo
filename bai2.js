@@ -1,17 +1,26 @@
-// BÀI 3.2 — Viết hàm tính tiền điện
-// Yêu cầu:
-//   1. Chuyển đoạn code tính tiền điện của LAB 2.2 thành hàm
-//   2. Hàm nhận số kWh và trả về số tiền
-// Tiêu chí: gọi được nhiều lần với giá trị khác nhau; 335 kWh ra 910.000đ;
-//           KHÔNG có console.log bên trong hàm
-//
-// Bảng giá:  0-50 kWh: 1.800đ  |  51-100 kWh: 2.300đ  |  trên 100 kWh: 3.000đ
-// Gợi ý: tách làm hai hàm — tinhTienDien(soKwh) chỉ tính, inHoaDon(soKwh) in cho đẹp.
+// BÀI 3.2 — Viết hàm tính tiền điện (ĐÁP ÁN)
+// Tách hai hàm: một hàm chỉ tính, một hàm chỉ in.
 
-// TODO: viết hàm của bạn dưới đây
+function tinhTienDien(soKwh) {
+  let tien = 0
+  if (soKwh <= 50) {
+    tien = soKwh * 1800
+  } else if (soKwh <= 100) {
+    tien = 50 * 1800 + (soKwh - 50) * 2300
+  } else {
+    tien = 50 * 1800 + 50 * 2300 + (soKwh - 100) * 3000
+  }
+  return tien
+}
 
+function inHoaDon(soKwh) {
+  console.log('Tiêu thụ ' + soKwh + ' kWh → ' + tinhTienDien(soKwh) + 'đ')
+}
 
-// Bỏ comment để tự kiểm tra:
-// console.log(tinhTienDien(30))    // 54000
-// console.log(tinhTienDien(80))    // 159000
-// console.log(tinhTienDien(335))   // 910000
+console.log(tinhTienDien(30))    // 54000
+console.log(tinhTienDien(80))    // 159000
+console.log(tinhTienDien(335))   // 910000
+inHoaDon(335)
+
+// Hàm chỉ tính thì kiểm tra được và dùng lại được cho bài toán ngược.
+// Hàm in thì không.
