@@ -1,13 +1,13 @@
-# l1/d7-gia-tri-falsy — Sáu giá trị falsy
+# l1/d8-so-sanh-bang — So sánh == và ===
 
-**Slide:** Bài 1 · "Giá trị falsy" (demo `l1-d7`).
+**Slide:** Bài 1 · "So sánh bằng" (demo `l1-d8`).
 
-Chỉ sáu giá trị cho ra `false`: `false`, `0`, `""`, `null`, `undefined`, `NaN`.
-Mọi thứ còn lại là `true`, kể cả `"0"`, `[]`, `{}` và `" "`.
+`==` đổi kiểu trước khi so sánh nên sinh ra kết quả khó đoán. `===` rõ ràng: khác kiểu là khác.
+Tương tự dùng `!==` thay cho `!=`.
 
 ```bash
 node index.js
-git diff l1/d6-typeof l1/d7-gia-tri-falsy
+git diff l1/d7-gia-tri-falsy l1/d8-so-sanh-bang
 ```
 
-Branch tiếp theo: `l1/d8-so-sanh-bang`.
+Trạng thái hoàn chỉnh cuối bài 1: `l1/end`.

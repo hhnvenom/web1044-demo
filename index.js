@@ -100,3 +100,17 @@ console.log(Boolean(" "))      // một dấu cách
 
 // Mảng rỗng là true — chỗ này hay làm sai khi kiểm tra "giỏ hàng có trống không".
 // Bài 4 sẽ gặp lại: phải dùng gioHang.length === 0.
+
+// ======================================================
+//  Demo 8 — So sánh == và ===
+// ======================================================
+console.log(5 == "5")     // true  — đổi kiểu rồi mới so sánh
+console.log(5 === "5")    // false — so sánh cả giá trị lẫn kiểu
+
+console.log(0 == false)   // true
+console.log(0 === false)  // false
+
+console.log(null == undefined)   // true
+console.log(null === undefined)  // false
+
+// Luôn dùng === và !==. == tự đổi kiểu, tạo ra kết quả không ai đoán được.
