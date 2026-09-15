@@ -81,3 +81,22 @@ console.log(typeof [1, 2, 3])   // ← "object" — mảng cũng là object
 // Muốn kiểm tra mảng phải dùng Array.isArray()
 console.log(Array.isArray([1, 2, 3]))   // true
 console.log(Array.isArray('chuỗi'))     // false
+
+// ======================================================
+//  Demo 7 — Sáu giá trị falsy
+// ======================================================
+console.log(Boolean(false))
+console.log(Boolean(0))
+console.log(Boolean(""))
+console.log(Boolean(null))
+console.log(Boolean(undefined))
+console.log(Boolean(NaN))
+
+// Mọi thứ còn lại đều true — kể cả những cái trông có vẻ rỗng
+console.log(Boolean("0"))      // chuỗi "0"
+console.log(Boolean([]))       // mảng rỗng
+console.log(Boolean({}))       // object rỗng
+console.log(Boolean(" "))      // một dấu cách
+
+// Mảng rỗng là true — chỗ này hay làm sai khi kiểm tra "giỏ hàng có trống không".
+// Bài 4 sẽ gặp lại: phải dùng gioHang.length === 0.
