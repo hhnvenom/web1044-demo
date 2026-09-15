@@ -46,3 +46,24 @@ console.log(Number("10") + 5) // 15 — cách sửa cho bug "10" + 5
 console.log("Xin chào WEB1044")
 console.log(2 + 3)
 console.log("2" + 3)   // mồi nhử cho phần ép kiểu
+
+// ======================================================
+//  Demo 5 — let, const và var
+// ======================================================
+const diem = 8.5
+// diem = 9        // ← bỏ comment dòng này xem lỗi gì
+console.log(diem)
+
+let soLan = 0
+soLan = soLan + 1  // let thì gán lại được
+console.log(soLan)
+
+// var rò rỉ ra ngoài khối {}
+if (true) {
+  var a = 'var'
+  let b = 'let'
+}
+console.log(a)     // chạy được
+// console.log(b)  // ← lỗi: b is not defined
+
+// Đây là lý do var gây lỗi khó tìm trong file dài.
