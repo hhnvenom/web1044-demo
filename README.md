@@ -1,16 +1,18 @@
-# l7/d3-hieu-ung-an-hien — Hiệu ứng ẩn hiện
+# l7/d4-cart-events — Giỏ hàng chạy được
 
-**Slide:** Bài 7 · "Hiệu ứng ẩn hiện" (demo `l7-d3`).
+**Slide:** Bài 7 · "Giỏ hàng chạy được" (demo `l7-d4`).
 
-`classList.toggle` bật/tắt class, CSS `transition` lo phần mượt.
+Vòng đời ba bước: **thao tác → sửa dữ liệu → render lại**.
 
-File còn kèm bản **tự chạy** bằng `setTimeout` đúng như LAB 7.1: hiện ở giây thứ 2,
-ẩn ở giây thứ 5. Hai mốc độc lập, cả hai tính từ lúc tải trang.
+`find` để cộng dồn sản phẩm trùng · `reduce` để tính tổng · `map` để render.
+Bài 7 không dạy gì mới về mảng, chỉ ghép lại.
+
+Bấm thêm cùng một sản phẩm hai lần để thấy nó cộng dồn chứ không tạo dòng mới.
 
 ```bash
 npx serve .
 # rồi mở http://localhost:3000
-git diff l7/d2-event-delegation l7/d3-hieu-ung-an-hien
+git diff l7/d3-hieu-ung-an-hien l7/d4-cart-events
 ```
 
-Branch tiếp theo: `l7/d4-cart-events`.
+Branch tiếp theo: `l7/end`.
