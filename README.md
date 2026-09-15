@@ -1,13 +1,13 @@
-# l5/d5-private-field — Private field
+# l5/d6-getter-setter — Getter và setter
 
-**Slide:** Bài 5 · demo `l5-d5`.
+**Slide:** Bài 5 · demo `l5-d6`.
 
-Không có `#`, ai cũng gán được `tk.soDu = -999999`. Có `#`, muốn đổi số dư phải đi qua `napTien` — nơi có kiểm tra.
-Trong file có sẵn một dòng đã comment để bạn bỏ comment và thấy lỗi cú pháp thật.
+Getter gọi **không có dấu ngoặc** nhưng thực chất đang chạy một hàm.
+Setter trông như gán biến (`p.price = 25000`) nhưng thật ra chạy hàm — nơi có chỗ để kiểm tra.
 
 ```bash
 node index.js
-git diff l5/d4-class-student l5/d5-private-field
+git diff l5/d5-private-field l5/d6-getter-setter
 ```
 
-Branch tiếp theo: `l5/d6-getter-setter`.
+Branch tiếp theo: `l5/d7-static`.

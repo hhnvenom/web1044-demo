@@ -186,3 +186,45 @@
   // Bỏ comment dòng dưới để thấy lỗi cú pháp thật:
   // console.log(tk.#soDu)
 }
+
+// ------------------------------------------------------
+//  Demo 6 — Getter  (slide "Getter — lấy giá trị đã qua xử lý")
+// ------------------------------------------------------
+{
+  class Product {
+    constructor(name, price) {
+      this.name = name
+      this._price = price
+    }
+    get price() {
+      return this._price + ' VND'
+    }
+  }
+
+  const p = new Product('Laptop', 20000)
+  console.log(p.price)   // "20000 VND" — gọi không có dấu ngoặc
+}
+
+// ------------------------------------------------------
+//  Demo 6b — Setter  (slide "Setter — chặn giá trị không hợp lệ")
+// ------------------------------------------------------
+{
+  class Product {
+    constructor(name, price) {
+      this._price = price
+    }
+    get price() { return this._price + ' VND' }
+    set price(value) {
+      if (value < 0) {
+        console.log('Giá không hợp lệ!')
+        return
+      }
+      this._price = value
+    }
+  }
+
+  const p = new Product('Laptop', 20000)
+  p.price = -5        // "Giá không hợp lệ!"
+  p.price = 25000
+  console.log(p.price)
+}
