@@ -61,3 +61,14 @@ document.getElementById('p2').classList.add('noi-bat')
 
 // Ưu tiên classList: CSS lo hình thức, JS chỉ bật tắt trạng thái.
 // classList có add, remove, toggle và contains.
+
+// ======================================================
+//  Demo 3 — Tạo phần tử mới và gắn vào trang
+// ======================================================
+const div = document.createElement('div')
+div.textContent = 'Cà phê Arabica'
+div.classList.add('product')
+document.body.appendChild(div)
+
+// Ba dòng đầu chỉ tạo object TRONG BỘ NHỚ.
+// Không có appendChild thì không ai nhìn thấy gì — đây là lỗi hay gặp nhất của bài.
