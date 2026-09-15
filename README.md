@@ -1,20 +1,22 @@
-# l7/end — Bài 7 hoàn chỉnh
+# l8/lab-start — Code khởi tạo Lab 08
 
-**Slide:** Bài 7 · "Tóm tắt bài 7" (demo `l7-end`).
+**Slide:** Bài 8 · LAB 08 (demo `l8-lab-start`).
 
-Trang bán hàng chạy được: danh sách sản phẩm render từ mảng, giỏ hàng **thêm · tăng ·
-giảm · xoá**, tổng tiền luôn khớp.
-
-Ba tình huống dễ quên đều đã xử lý: giảm về 0 thì xoá · giỏ trống có thông báo ·
-thêm trùng thì cộng dồn.
-
-Các slide demo trung gian (nút đếm, danh sách delegation, nút Hiện/Ẩn) đã gỡ bỏ —
-đây là trang thành phẩm, không còn khung dạy học.
-
-Nhấn F5 thì mất sạch giỏ hàng. Đó là bài toán của bài 8.
+Branch này chính là **kết quả cuối bài 7**: trang sản phẩm và giỏ hàng chạy bằng sự kiện,
+nhưng chưa lưu được gì. Đề bài 6 bài của Lab 08 nằm trong comment ở cuối `js/app.js`.
 
 ```bash
+git fetch origin && git checkout l8/lab-start
 npx serve .
-# rồi mở http://localhost:3000
-git diff l7/d4-cart-events l7/end
 ```
+
+| Bài | Nội dung |
+|---|---|
+| 8.1 | Dark / Light mode lưu localStorage |
+| 8.2 | Lưu giỏ hàng, F5 không mất |
+| 8.3 | Notification khi thanh toán |
+| 8.4 | Form đăng ký validate bằng validator.js |
+| 8.5 | Nhờ AI gợi ý chức năng bổ sung |
+| 8.6 | Bài mở rộng |
+
+CSS cho `body.light` và `body.dark` đã có sẵn trong `css/style.css` — việc của bạn là gắn nút và lưu lựa chọn.

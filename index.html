@@ -3,26 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cà phê WEB1044 — cuối bài 7</title>
+  <title>Shop cà phê — Bài 8</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <header><h1>☕ Cà phê WEB1044</h1></header>
+<body class="light">
+  <header class="header">
+    <h1>☕ Shop cà phê</h1>
+  </header>
 
   <main>
-    <div id="box">Chào mừng đến với website của chúng tôi</div>
+    <section>
+      <h2>Sản phẩm</h2>
+      <div id="productList" class="grid"></div>
+    </section>
 
-    <h2>Sản phẩm</h2>
-    <div id="danh-sach" class="grid"></div>
-
-    <section id="gio-khung">
-      <h2>🛒 Giỏ hàng</h2>
-      <div id="gio"></div>
+    <section>
+      <h2>Giỏ hàng</h2>
+      <div id="cartBox"></div>
+      <p class="total">Tổng: <strong id="cartTotal">0đ</strong></p>
     </section>
   </main>
 
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
-  <script src="js/cart.js"></script>
 </body>
 </html>
