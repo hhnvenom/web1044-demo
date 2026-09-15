@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop của tôi — Danh sách sản phẩm</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <a class="logo" href="index.html">🛍️ Shop của tôi</a>
+    <nav class="nav">
+      <a href="index.html">Sản phẩm</a>
+      <a href="cart.html">Giỏ hàng</a>
+      <a href="register.html">Đăng ký</a>
+    </nav>
+    <!-- TODO (buổi 8): nút đổi dark mode, số lượng trong giỏ -->
+  </header>
+
+  <main class="container">
+    <h1>Danh sách sản phẩm</h1>
+
+    <!-- TODO (buổi 6): nút lọc theo danh mục, render bằng JS -->
+    <div id="filters" class="filters"></div>
+
+    <!-- Sản phẩm sẽ được JS đổ vào đây. KHÔNG viết tay từng sản phẩm. -->
+    <div id="product-list" class="grid"></div>
+  </main>
+
+  <footer class="footer">Assignment WEB1044 — FPT Polytechnic</footer>
+
+  <!-- Thứ tự nhúng rất quan trọng: file sau dùng lại biến/class của file trước -->
+  <script src="js/data.js"></script>
+  <script src="js/models.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/events.js"></script>
+</body>
+</html>

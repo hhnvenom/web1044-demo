@@ -1,0 +1,89 @@
+:root {
+  --bg: #ffffff;
+  --text: #1b2437;
+  --muted: #6b7386;
+  --line: #e6e8ee;
+  --primary: #f37021;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container { max-width: 1000px; margin: 0 auto; padding: 1rem 1.25rem 3rem; }
+
+/* ---------- Header ---------- */
+.header {
+  display: flex; align-items: center; gap: 1.5rem;
+  padding: 0.8rem 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+.logo { font-weight: 700; text-decoration: none; color: var(--text); }
+.nav { display: flex; gap: 1rem; }
+.nav a { color: var(--muted); text-decoration: none; }
+.nav a:hover { color: var(--primary); }
+
+/* ---------- Nút ---------- */
+.btn {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--text);
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+}
+.btn:hover { border-color: var(--primary); }
+.btn-primary { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+/* ---------- Lưới sản phẩm ---------- */
+.filters { display: flex; gap: 0.5rem; margin: 1rem 0; flex-wrap: wrap; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem;
+}
+.card .emoji { font-size: 2.5rem; text-align: center; }
+.card h3 { margin: 0.5rem 0 0.25rem; font-size: 1rem; }
+.card .price { font-weight: 700; }
+.card .desc { color: var(--muted); font-size: 0.85rem; }
+
+/* ---------- Giỏ hàng ---------- */
+.cart-item {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--line);
+}
+.cart-foot { margin-top: 1rem; display: flex; gap: 1rem; align-items: center; }
+.empty { color: var(--muted); padding: 2rem 0; text-align: center; }
+
+/* ---------- Form ---------- */
+.form { max-width: 420px; }
+.field { display: flex; flex-direction: column; gap: 0.25rem; margin-bottom: 0.9rem; }
+.field input {
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+}
+.field input.invalid { border-color: #dc2626; }
+.error { color: #dc2626; font-size: 0.8rem; min-height: 1em; }
+.message { font-weight: 600; }
+
+.footer {
+  text-align: center; color: var(--muted);
+  padding: 2rem; border-top: 1px solid var(--line); font-size: 0.85rem;
+}
+
+/* TODO (buổi 8): thêm bảng màu dark mode
+   body.dark { --bg: #15141c; --text: #ece9f5; ... } */
