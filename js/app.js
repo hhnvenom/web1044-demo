@@ -10,8 +10,11 @@ function openStudentInfo() {
   const left = (screen.width - width) / 2
   const top = (screen.height - height) / 2
 
-  const w = window.open('', 'StudentInfo',
-    `width=${width},height=${height},top=${top},left=${left}`)
+  const opts =
+    `width=${width},height=${height},` +
+    `top=${top},left=${left}`
+
+  const w = window.open('', 'StudentInfo', opts)
 
   w.document.write(`<h1>Thông tin sinh viên</h1>`)
   w.document.close()
