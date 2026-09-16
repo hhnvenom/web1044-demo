@@ -4,10 +4,11 @@ nut.textContent = 'Thêm giỏ hàng'
 document.body.appendChild(nut)
 
 // 2. Viết hàm xử lý riêng
+const ketQua = document.getElementById('ketQua')
 let dem = 0
 function themVaoGio() {
   dem++
-  document.getElementById('ketQua').textContent = 'Đã thêm ' + dem + ' món'
+  ketQua.textContent = 'Đã thêm ' + dem + ' món'
 }
 
 // 3. Gắn hàm vào sự kiện click
