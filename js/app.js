@@ -42,7 +42,8 @@ hienThi()   // đọc lại ngay khi tải trang
 
 // ---------- Demo 4 — Giỏ hàng sống sót qua F5 ----------
 // 1. Đọc lại khi tải trang
-let cart = JSON.parse(localStorage.getItem('cart') || '[]')
+const luu = localStorage.getItem('cart')
+let cart = JSON.parse(luu || '[]')
 
 // Bản an toàn hơn: localStorage có thể bị chặn, hoặc dữ liệu cũ bị hỏng
 function docGio() {
