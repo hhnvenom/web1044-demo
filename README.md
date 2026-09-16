@@ -6,10 +6,12 @@ Mỗi lần gõ, hàm `kiemTra()` chạy lại và quyết định ba thứ củ
 `disabled`, màu nền, con trỏ chuột.
 
 ```js
-const hopLe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)
-nutGui.disabled = !hopLe
-nutGui.style.background = hopLe ? '#16a34a' : '#cbd2dd'
+const ok = MAU.test(email.value)
+nut.disabled = !ok
+nut.style.background = ok ? '#16a34a' : '#cbd2dd'
 ```
+
+Biểu thức chính quy tách ra hằng `MAU` ở đầu file cho dễ đọc và dễ sửa.
 
 Đừng quên gọi `kiemTra()` **một lần lúc nạp trang**, nếu không nút bắt đầu ở
 trạng thái bật dù ô email còn trống.

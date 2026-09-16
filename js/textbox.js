@@ -2,7 +2,8 @@
 const o = document.getElementById('hoTen')
 const hien = document.getElementById('xemTruoc')
 
-// input chạy sau MỖI ký tự, khác change chỉ chạy khi rời ô
+// input chạy sau MỖI ký tự gõ vào
 o.addEventListener('input', function (e) {
-  hien.textContent = e.target.value || '(chưa nhập gì)'
+  const val = e.target.value
+  hien.textContent = val || '(chưa nhập gì)'
 })
