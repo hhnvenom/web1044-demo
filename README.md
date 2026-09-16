@@ -1,18 +1,20 @@
-# l7/d1-add-event-listener — addEventListener
+# l7/d9-tao-button — tạo nút bằng JavaScript
 
-**Slide:** Bài 7 · "addEventListener" (demo `l7-d1`).
+**Slide:** Bài 7 · "Tạo nút, gắn sự kiện, gọi hàm xử lý" (demo `l7-d9`).
 
-Trang sản phẩm của bài 6 giờ **biết lắng nghe**. Nút đếm số lần bấm.
+Ba bước gõ theo slide:
 
-Ba thành phần của một listener: phần tử nào lắng nghe · sự kiện gì · làm gì khi xảy ra.
+1. `document.createElement('button')` → đặt `textContent` → `appendChild` vào trang.
+2. Viết **hàm xử lý riêng** `themVaoGio()` thay vì nhét code vào giữa listener.
+3. `nut.addEventListener('click', themVaoGio)` — truyền **tên hàm**, không có dấu ngoặc.
 
-Lỗi số một của bài: viết `addEventListener('click', xuLy())` có dấu ngoặc — hàm chạy ngay
-lúc tải trang thay vì lúc bấm.
+Lỗi hay gặp: viết `addEventListener('click', themVaoGio())` là gọi hàm ngay một lần
+lúc nạp trang rồi gắn `undefined` làm listener, bấm nút không có gì xảy ra.
 
 ```bash
 npx serve .
-# rồi mở http://localhost:3000
-git diff l6/end l7/d1-add-event-listener
+# rồi mở http://localhost:3000/button.html
+git diff l7/d1-add-event-listener l7/d9-tao-button
 ```
 
-Branch tiếp theo: `l7/d2-event-delegation`.
+Branch tiếp theo: `l7/d10-textbox-live`.
