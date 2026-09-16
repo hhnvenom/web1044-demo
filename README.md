@@ -82,6 +82,9 @@ node index.js                      # lệnh chạy ghi trong README của từng
 | `l7/d2-event-delegation` | 7 | Event delegation | `npx serve .` |
 | `l7/d3-hieu-ung-an-hien` | 7 | Hiệu ứng ẩn hiện | `npx serve .` |
 | `l7/d4-cart-events` | 7 | Sự kiện giỏ hàng | `npx serve .` |
+| `l7/d9-tao-button` | 7 | Tạo nút bằng JavaScript, gắn hàm xử lý | `npx serve .` |
+| `l7/d10-textbox-live` | 7 | Ô nhập liệu cập nhật liên tục | `npx serve .` |
+| `l7/d11-form-validate` | 7 | Bật nút Gửi khi email hợp lệ | `npx serve .` |
 | `l7/end` | 7 | Shop có giỏ hàng chạy được (nền của bài 8) | `npx serve .` |
 | `l7/lab-start` | 7 | Khung Lab 07 | `npx serve .` |
 | `l8/d1-local-storage` | 8 | `localStorage` cơ bản | `npx serve .` |
