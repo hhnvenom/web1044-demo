@@ -10,7 +10,8 @@
 //     this.id = id
 //     this.name = name
 //     this.info = function () {
-//       return 'Category [ID: ' + this.id + ', Name: ' + this.name + ']'
+//       return 'Category [ID: ' + this.id +
+           ', Name: ' + this.name + ']'
 //     }
 //   }
 //   let category1 = new Category(1, 'Electronics')
