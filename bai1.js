@@ -4,7 +4,8 @@ function Category(id, name) {
   this.id = id
   this.name = name
   this.info = function () {
-    return 'Category [ID: ' + this.id + ', Name: ' + this.name + ']'
+    return 'Category [ID: ' + this.id +
+           ', Name: ' + this.name + ']'
   }
 }
 
@@ -20,7 +21,8 @@ class Category2 {
     this.name = name
   }
   info() {
-    return 'Category [ID: ' + this.id + ', Name: ' + this.name + ']'
+    return 'Category [ID: ' + this.id +
+           ', Name: ' + this.name + ']'
   }
 }
 
