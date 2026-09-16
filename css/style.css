@@ -57,3 +57,13 @@ button:hover { border-color: #f37021; }
   background: #fff;
 }
 .demo h2 { margin: 0 0 12px; font-size: 16px; color: #6b7386; }
+
+/* Bài 7 · Demo 10 — ô nhập liệu */
+.demo input {
+  font: inherit;
+  padding: 8px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  width: 220px;
+}
+.demo input:focus { outline: 2px solid #f37021; outline-offset: 1px; }

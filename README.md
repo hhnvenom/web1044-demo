@@ -1,19 +1,25 @@
-# l7/d2-event-delegation — Event delegation
+# l7/d10-textbox-live — gõ tới đâu hiện tới đó
 
-**Slide:** Bài 7 · "Event delegation" (demo `l7-d2`).
+**Slide:** Bài 7 · "Ô nhập liệu cập nhật liên tục" (demo `l7-d10`).
 
-Gắn **một** listener ở thẻ cha thay vì gắn cho từng nút con.
+Một listener `input` trên ô nhập, mỗi phím gõ là một lần chạy:
 
-Dòng `if (!e.target.classList.contains('mua')) return` là bắt buộc — không có nó thì
-bấm vào khoảng trống cũng chạy.
+```js
+o.addEventListener('input', function (e) {
+  hien.textContent = e.target.value || '(chưa nhập gì)'
+})
+```
 
-Gắn listener cho từng nút sẽ **hỏng** khi render lại danh sách bằng `innerHTML`:
-nút cũ bị xoá, listener biến mất theo. Delegation không bị vậy.
+`e.target` chính là ô đang gõ, nên lấy giá trị bằng `e.target.value` không cần
+tìm lại phần tử.
+
+Thử tại lớp: đổi `'input'` thành `'change'` rồi gõ lại — chữ chỉ đổi khi bấm ra
+ngoài ô. Đó là khác biệt giữa hai sự kiện.
 
 ```bash
 npx serve .
-# rồi mở http://localhost:3000
-git diff l7/d1-add-event-listener l7/d2-event-delegation
+# rồi mở http://localhost:3000/textbox.html
+git diff l7/d2-event-delegation l7/d10-textbox-live
 ```
 
-Branch tiếp theo: `l7/d3-hieu-ung-an-hien`.
+Branch tiếp theo: `l7/d11-form-validate`.
