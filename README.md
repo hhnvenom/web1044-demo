@@ -6,7 +6,8 @@ Một listener `input` trên ô nhập, mỗi phím gõ là một lần chạy:
 
 ```js
 o.addEventListener('input', function (e) {
-  hien.textContent = e.target.value || '(chưa nhập gì)'
+  const val = e.target.value
+  hien.textContent = val || '(chưa nhập gì)'
 })
 ```
 
