@@ -67,3 +67,11 @@ button:hover { border-color: #f37021; }
   width: 220px;
 }
 .demo input:focus { outline: 2px solid #f37021; outline-offset: 1px; }
+
+/* Bài 7 · Demo 11 — nút Gửi đổi màu theo trạng thái */
+#gui {
+  border: 0;
+  padding: 8px 16px;
+  color: #fff;
+  font-weight: 700;
+}

@@ -1,25 +1,26 @@
-# l7/d10-textbox-live — gõ tới đâu hiện tới đó
+# l7/d11-form-validate — bật nút Gửi khi email hợp lệ
 
-**Slide:** Bài 7 · "Ô nhập liệu cập nhật liên tục" (demo `l7-d10`).
+**Slide:** Bài 7 · "Email hợp lệ thì mới cho gửi" (demo `l7-d11`).
 
-Một listener `input` trên ô nhập, mỗi phím gõ là một lần chạy:
+Mỗi lần gõ, hàm `kiemTra()` chạy lại và quyết định ba thứ của nút Gửi:
+`disabled`, màu nền, con trỏ chuột.
 
 ```js
-o.addEventListener('input', function (e) {
-  hien.textContent = e.target.value || '(chưa nhập gì)'
-})
+const hopLe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)
+nutGui.disabled = !hopLe
+nutGui.style.background = hopLe ? '#16a34a' : '#cbd2dd'
 ```
 
-`e.target` chính là ô đang gõ, nên lấy giá trị bằng `e.target.value` không cần
-tìm lại phần tử.
+Đừng quên gọi `kiemTra()` **một lần lúc nạp trang**, nếu không nút bắt đầu ở
+trạng thái bật dù ô email còn trống.
 
-Thử tại lớp: đổi `'input'` thành `'change'` rồi gõ lại — chữ chỉ đổi khi bấm ra
-ngoài ô. Đó là khác biệt giữa hai sự kiện.
+Kiểm tra phía client chỉ để trải nghiệm mượt. Máy chủ vẫn phải kiểm lại — ý này
+quay lại ở bài 8.
 
 ```bash
 npx serve .
-# rồi mở http://localhost:3000/textbox.html
-git diff l7/d2-event-delegation l7/d10-textbox-live
+# rồi mở http://localhost:3000/form.html
+git diff l7/d10-textbox-live l7/d11-form-validate
 ```
 
-Branch tiếp theo: `l7/d11-form-validate`.
+Branch tiếp theo: `l7/d3-hieu-ung-an-hien`.
