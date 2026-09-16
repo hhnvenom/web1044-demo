@@ -10,8 +10,11 @@ function openStudentInfo() {
   const left = (screen.width - width) / 2
   const top = (screen.height - height) / 2
 
-  const w = window.open('', 'StudentInfo',
-    `width=${width},height=${height},top=${top},left=${left}`)
+  const opts =
+    `width=${width},height=${height},` +
+    `top=${top},left=${left}`
+
+  const w = window.open('', 'StudentInfo', opts)
 
   w.document.write(`<h1>Thông tin sinh viên</h1>`)
   w.document.close()
@@ -31,11 +34,16 @@ document.getElementById('thong-tin').innerHTML =
 // ======================================================
 //  Demo 2 — Chọn phần tử trong trang
 // ======================================================
-console.log(document.getElementById('tieu-de'))
-console.log(document.querySelector('.gia'))       // phần tử ĐẦU TIÊN
-console.log(document.querySelectorAll('.gia'))    // TẤT CẢ
+const tieuDe = document.getElementById('tieu-de')
+console.log(tieuDe)
 
-document.getElementById('tieu-de').textContent = 'Menu hôm nay'
+// querySelector → phần tử ĐẦU TIÊN khớp
+console.log(document.querySelector('.gia'))
+
+// querySelectorAll → TẤT CẢ phần tử khớp
+console.log(document.querySelectorAll('.gia'))
+
+tieuDe.textContent = 'Menu hôm nay'
 
 // querySelectorAll trả về DANH SÁCH — phải duyệt mới sửa được từng cái
 document.querySelectorAll('.gia').forEach(function (el) {
@@ -56,8 +64,11 @@ document.getElementById('b').innerHTML   = chuoi
 // ------------------------------------------------------
 //  Đổi style và class
 // ------------------------------------------------------
-document.getElementById('p1').style.color = 'red'
-document.getElementById('p2').classList.add('noi-bat')
+const p1 = document.getElementById('p1')
+const p2 = document.getElementById('p2')
+
+p1.style.color = 'red'
+p2.classList.add('noi-bat')
 
 // Ưu tiên classList: CSS lo hình thức, JS chỉ bật tắt trạng thái.
 // classList có add, remove, toggle và contains.
